@@ -9,9 +9,7 @@ crossover/    shared mid-level theory (game theory, Bayesian inference, convex o
 _meta/        build scripts, shared styles, CI helpers
 ```
 
-#### Quickstart (for readers)
-
-Browse any folder, open the `.md` for the reference, open the `.ipynb` for runnable code.
+#### Quickstart 
 
 ```bash
 pip install -r requirements.txt
