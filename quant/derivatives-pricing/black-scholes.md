@@ -10,13 +10,13 @@ status: draft
 notebook: black-scholes.ipynb
 ---
 
-# Black–Scholes Model
+#### Black–Scholes Model
 
-## TL;DR
+#### TL;DR
 
 Under geometric Brownian motion plus a few idealized market assumptions, the no-arbitrage price of a European option has a closed form involving the standard normal CDF — and its sensitivities (Greeks) likewise.
 
-## Setup
+#### Setup
 
 The underlying asset price $S_t$ follows a **geometric Brownian motion** (GBM)
 
@@ -28,7 +28,7 @@ so $S_T = S_0 \exp\!\left((\mu - \tfrac{1}{2}\sigma^2) T + \sigma W_T\right)$ is
 
 $$ V_0 = e^{-rT}\, \mathbb{E}^{\mathbb{Q}}[\text{payoff}(S_T)]. $$
 
-## Black–Scholes PDE
+#### Black–Scholes PDE
 
 Any sufficiently smooth derivative price $V(S, t)$ satisfies
 
