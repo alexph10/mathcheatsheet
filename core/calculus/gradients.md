@@ -1,15 +1,3 @@
----
-id: gradients
-title: Gradients
-domain: core/calculus
-tags: []
-prerequisites: [vectors]
-used_by: []
-difficulty: 1
-status: draft
-notebook: gradients.ipynb
----
-
 # Gradients
 
 ## TL;DR
