@@ -1,14 +1,3 @@
----
-id: chain-rule
-title: Chain Rule
-domain: core/calculus
-tags: [identity]
-prerequisites: [gradients]
-used_by: []
-difficulty: 1
-status: draft
----
-
 # Chain Rule
 
 ## TL;DR
