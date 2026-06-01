@@ -107,7 +107,7 @@ Tighter exponential tail bounds derived from MGFs (Chernoff, Hoeffding) live in 
 
 ## Worked micro-example
 
-Let $X \sim \text{Binomial}(10, 0.3)$. Then $\mathbb{E}[X] = np = 3$ and $\text{Var}(X) = np(1-p) = 2.1$. Differentiating the MGF $M_X(t) = (0.7 + 0.3 e^t)^{10}$ at $t = 0$ gives the same mean; the second derivative at $0$ gives $\mathbb{E}[X^2] = 11.1$, recovering $\text{Var}(X) = 11.1 - 9 = 2.1$. ✓
+Let $X \sim \text{Binomial}(10, 0.3)$. Then $\mathbb{E}[X] = np = 3$ and $\text{Var}(X) = np(1-p) = 2.1$. Differentiating the MGF $M_X(t) = (0.7 + 0.3 e^t)^{10}$ at $t = 0$ gives the same mean; the second derivative at $0$ gives $\mathbb{E}[X^2] = 11.1$, recovering $\text{Var}(X) = 11.1 - 9 = 2.1$.
 
 > See [companion notebook](./expectation-variance.ipynb) for a Monte Carlo check of linearity (dependent case) and of $\text{Var}(X+Y)$ vs the analytic formula.
 

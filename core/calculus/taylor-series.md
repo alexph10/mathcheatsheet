@@ -55,7 +55,7 @@ Common Maclaurin expansions ($a = 0$):
 
 ## Worked micro-example
 
-For $f(x) = \cos x$ at $a = 0$, second-order approximation: $\cos x \approx 1 - x^2/2$. Truncation error at $x = 0.5$: exact $\cos 0.5 = 0.8776$, approx $0.8750$, error $0.0026 \approx (0.5)^4/24 = 0.0026$. ✓
+For $f(x) = \cos x$ at $a = 0$, second-order approximation: $\cos x \approx 1 - x^2/2$. Truncation error at $x = 0.5$: exact $\cos 0.5 = 0.8776$, approx $0.8750$, error $0.0026 \approx (0.5)^4/24 = 0.0026$, matching the next-order term as expected.
 
 > See [companion notebook](./taylor-series.ipynb) for visualizing truncations of $\sin x$ at various orders and the growing truncation error.
 

@@ -93,7 +93,7 @@ Let $f(x) = x^\top A x$ with $A = \begin{bmatrix} 2 & 1 \\ 1 & 3 \end{bmatrix}$ 
 
 $$ \nabla f(x) = (A + A^\top) x = \begin{bmatrix} 4 & 2 \\ 2 & 6 \end{bmatrix} \begin{bmatrix} 1 \\ 2 \end{bmatrix} = \begin{bmatrix} 8 \\ 14 \end{bmatrix}. $$
 
-Check: $f(x) = 2(1)^2 + 2(1)(2)(1) + 3(2)^2 = 2 + 4 + 12 = 18$, and a tiny perturbation $x + \varepsilon e_1$ gives $\Delta f \approx 8\varepsilon$. ✓
+Check: $f(x) = 2(1)^2 + 2(1)(2)(1) + 3(2)^2 = 2 + 4 + 12 = 18$, and a tiny perturbation $x + \varepsilon e_1$ gives $\Delta f \approx 8\varepsilon$, matching the first gradient entry.
 
 > See [companion notebook](./matrix-calculus.ipynb) for SymPy-verified identities and a finite-difference sanity check.
 

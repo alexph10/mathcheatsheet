@@ -70,7 +70,7 @@ $$ \frac{\partial f}{\partial x_1} = 2 x_1 + 3 x_2, \qquad \frac{\partial f}{\pa
 
 So $\nabla f(\mathbf{x}) = (2 x_1 + 3 x_2,\, 3 x_1 + 4 x_2)^\top$. At $\mathbf{x} = (1, 1)^\top$: $\nabla f = (5, 7)^\top$. The steepest ascent direction at that point is $(5, 7)/\sqrt{74}$.
 
-In matrix form, $f(\mathbf{x}) = \mathbf{x}^\top A \mathbf{x}$ with $A = \begin{bmatrix}1 & 1.5 \\ 1.5 & 2\end{bmatrix}$, giving $\nabla f = 2 A \mathbf{x} = (5, 7)^\top$. ✓
+In matrix form, $f(\mathbf{x}) = \mathbf{x}^\top A \mathbf{x}$ with $A = \begin{bmatrix}1 & 1.5 \\ 1.5 & 2\end{bmatrix}$, giving $\nabla f = 2 A \mathbf{x} = (5, 7)^\top$ — same answer.
 
 > See [companion notebook](./gradients.ipynb) for gradient-field visualization and a hand-rolled gradient descent.
 

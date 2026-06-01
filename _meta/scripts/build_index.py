@@ -44,7 +44,7 @@ def main() -> None:
         domain = fm.get("domain", s.parent.relative_to(ROOT).as_posix())
         by_domain[domain].append((s, fm))
 
-    # --- Rewrite readme.md status table ---
+    # Rewrite readme.md status table
     readme = ROOT / "readme.md"
     text = readme.read_text(encoding="utf-8")
     rows = []
@@ -66,7 +66,7 @@ def main() -> None:
     else:
         print("WARNING: status table marker not found in readme.md")
 
-    # --- Write per-domain _index.md ---
+    # Write per-domain _index.md
     for domain, entries in by_domain.items():
         folder = ROOT / domain
         if not folder.exists():
