@@ -7,7 +7,7 @@ Practical, exhaustive, atomic cheat sheets for the math that actually shows up i
 1. **Atomic** — one concept per file. Easy to link, easy to update, easy to skim.
 2. **Hierarchical** — every sheet declares its `prerequisites` and what it's `used_by`, forming a DAG.
 3. **Layered** — `core/` holds canonical primitives; `ml/`, `quant/`, `crossover/` are thin applied sheets that link back. No formula is restated in two places.
-4. **Template-driven** — every `.md` follows [TEMPLATE.md](./TEMPLATE.md). Every `.ipynb` follows [TEMPLATE.ipynb](./TEMPLATE.ipynb).
+4. **Template-driven** — every `.md` follows [template.md](./template.md). Every `.ipynb` follows [template.ipynb](./template.ipynb).
 5. **Tooling-friendly** — YAML frontmatter on every sheet enables auto-generated indexes, prerequisite graphs, and link validation in CI.
 
 ## Repository layout
@@ -20,7 +20,7 @@ crossover/    shared mid-level theory (game theory, Bayesian inference, convex o
 _meta/        build scripts, shared styles, CI helpers
 ```
 
-See [TAXONOMY.md](./TAXONOMY.md) for the controlled vocabulary of tags and difficulty levels, and [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new sheet.
+See [taxonomy.md](./taxonomy.md) for the controlled vocabulary of tags and difficulty levels, and [contributing.md](./contributing.md) for how to add a new sheet.
 
 ## Status
 
@@ -58,7 +58,7 @@ jupyter lab
 
 ## Quickstart (for contributors)
 
-1. Pick a topic, copy `TEMPLATE.md` (and `TEMPLATE.ipynb` if code/plots help).
+1. Pick a topic, copy `template.md` (and `template.ipynb` if code/plots help).
 2. Fill in frontmatter — especially `prerequisites` and `used_by`.
 3. Run `python _meta/scripts/validate.py` to check frontmatter and links.
 4. Run `python _meta/scripts/build_index.py` to refresh the master index.

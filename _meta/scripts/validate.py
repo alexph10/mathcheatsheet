@@ -20,7 +20,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
-TOP_LEVEL_DOCS = {"README.md", "TEMPLATE.md", "TAXONOMY.md", "CONTRIBUTING.md"}
+TOP_LEVEL_DOCS = {"readme.md", "template.md", "taxonomy.md", "contributing.md"}
 REQUIRED_FIELDS = {"id", "title", "domain", "difficulty", "status"}
 VALID_STATUS = {"draft", "reviewed", "stable"}
 VALID_DIFFICULTY = {1, 2, 3}

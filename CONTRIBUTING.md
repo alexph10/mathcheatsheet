@@ -3,15 +3,15 @@
 ## Adding a new cheat sheet
 
 1. **Pick a slug.** Lowercase, kebab-case, globally unique across the whole repo (e.g. `svd`, `mean-variance-portfolio`). Never rename a slug once published — other sheets link to it.
-2. **Pick a domain.** Match an entry in [TAXONOMY.md](./TAXONOMY.md). The folder path == the `domain` field.
+2. **Pick a domain.** Match an entry in [taxonomy.md](./taxonomy.md). The folder path == the `domain` field.
 3. **Copy the template.**
    ```bash
-   cp TEMPLATE.md core/linear-algebra/<slug>.md
+   cp template.md core/linear-algebra/<slug>.md
    # if code/plots add value:
-   cp TEMPLATE.ipynb core/linear-algebra/<slug>.ipynb
+   cp template.ipynb core/linear-algebra/<slug>.ipynb
    ```
 4. **Fill in frontmatter.** Especially `prerequisites` and `used_by` — these build the dependency graph.
-5. **Write content** following the section order in TEMPLATE.md. Skip sections that genuinely don't apply rather than padding.
+5. **Write content** following the section order in template.md. Skip sections that genuinely don't apply rather than padding.
 6. **Validate.**
    ```bash
    python _meta/scripts/validate.py

@@ -1,7 +1,7 @@
-"""Rebuild the master index in README.md and per-folder _index.md files.
+"""Rebuild the master index in readme.md and per-folder _index.md files.
 
 Walks every cheat sheet, reads frontmatter, and rewrites the status table
-in README.md plus a flat table-of-contents per domain folder.
+in readme.md plus a flat table-of-contents per domain folder.
 """
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
-TOP_LEVEL_DOCS = {"README.md", "TEMPLATE.md", "TAXONOMY.md", "CONTRIBUTING.md"}
+TOP_LEVEL_DOCS = {"readme.md", "template.md", "taxonomy.md", "contributing.md"}
 FRONTMATTER_RE = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
 STATUS_TABLE_RE = re.compile(
     r"(\| Area\s+\| Sheets \| Notebooks \|\n\|[-:\| ]+\|\n)(?:\|.*\n)+",
@@ -44,8 +44,8 @@ def main() -> None:
         domain = fm.get("domain", s.parent.relative_to(ROOT).as_posix())
         by_domain[domain].append((s, fm))
 
-    # --- Rewrite README.md status table ---
-    readme = ROOT / "README.md"
+    # --- Rewrite readme.md status table ---
+    readme = ROOT / "readme.md"
     text = readme.read_text(encoding="utf-8")
     rows = []
     for domain in sorted(by_domain):
@@ -62,9 +62,9 @@ def main() -> None:
     if STATUS_TABLE_RE.search(text):
         text = STATUS_TABLE_RE.sub(new_table, text, count=1)
         readme.write_text(text, encoding="utf-8")
-        print(f"Updated README.md status table ({len(rows)} domains).")
+        print(f"Updated readme.md status table ({len(rows)} domains).")
     else:
-        print("WARNING: status table marker not found in README.md")
+        print("WARNING: status table marker not found in readme.md")
 
     # --- Write per-domain _index.md ---
     for domain, entries in by_domain.items():
