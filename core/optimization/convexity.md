@@ -1,14 +1,3 @@
----
-id: convexity
-title: Convexity
-domain: core/optimization
-tags: [convex]
-prerequisites: [gradients]
-used_by: []
-difficulty: 2
-status: draft
----
-
 # Convexity
 
 ## TL;DR
