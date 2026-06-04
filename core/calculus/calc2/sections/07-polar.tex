@@ -1,0 +1,52 @@
+\section{Polar Coordinates}
+
+\subsection{Definition}
+$(r, \theta)$ with $x = r \cos\theta$, $y = r \sin\theta$. Conversion back:
+$r^2 = x^2 + y^2$, $\tan\theta = y/x$ (with quadrant chosen by signs of $x, y$).
+
+\subsection{Slope of a polar curve $r = f(\theta)$}
+Treat $\theta$ as the parameter: $x = f(\theta) \cos\theta$, $y = f(\theta) \sin\theta$.
+\[ \frac{dy}{dx}
+= \frac{f'(\theta) \sin\theta + f(\theta) \cos\theta}{f'(\theta) \cos\theta - f(\theta) \sin\theta}. \]
+
+\subsection{Area in polar coordinates}
+The area swept by $r = f(\theta) \ge 0$ for $\theta \in [\alpha, \beta]$ (no self-overlap) is
+\[ A = \tfrac{1}{2} \int_\alpha^\beta f(\theta)^2 \dth. \]
+For the region between two polar curves $r = R(\theta) \ge r = r(\theta) \ge 0$:
+\[ A = \tfrac{1}{2} \int_\alpha^\beta \bigl(R(\theta)^2 - r(\theta)^2\bigr) \dth. \]
+
+\subsection{Polar arc length}
+\[ L = \int_\alpha^\beta \sqrt{f(\theta)^2 + f'(\theta)^2} \dth. \]
+
+\subsection{Useful curves}
+\[
+\renewcommand{\arraystretch}{1.3}
+\begin{array}{l|l}
+\text{Curve} & r(\theta) \\\hline
+\text{Circle, radius } a, \text{centered at origin} & r = a \\
+\text{Circle through origin, radius } a/2 & r = a \cos\theta \text{ or } a \sin\theta \\
+\text{Cardioid} & r = a(1 + \cos\theta) \\
+\text{Lima\c con} & r = a + b \cos\theta \\
+\text{Rose, } n \text{ petals if odd, } 2n \text{ if even} & r = a \cos(n\theta) \\
+\text{Lemniscate} & r^2 = a^2 \cos(2\theta) \\
+\text{Spiral of Archimedes} & r = a\theta
+\end{array}
+\]
+
+\begin{example}[Cardioid area]
+$r = 1 + \cos\theta$ on $[0, 2\pi]$:
+\[ A = \tfrac{1}{2}\!\int_0^{2\pi}\! (1 + \cos\theta)^2 \dth
+= \tfrac{1}{2}\!\int_0^{2\pi}\! \!\Bigl(1 + 2\cos\theta + \tfrac{1 + \cos 2\theta}{2}\Bigr) \dth
+= \tfrac{3\pi}{2}. \]
+\end{example}
+
+\begin{pitfallbox}
+\begin{itemize}[leftmargin=*,nosep]
+  \item $(r, \theta)$ is not unique: $(r, \theta) = (-r, \theta + \pi)$ and $(r, \theta + 2\pi k)$
+        give the same point.
+  \item Setting $r = f(\theta) = 0$ gives the values of $\theta$ where the curve passes through
+        the pole --- useful for finding limits of integration.
+  \item To find intersections of two polar curves, also check whether both pass through the pole;
+        the system $r_1 = r_2$ may miss intersections at the origin.
+\end{itemize}
+\end{pitfallbox}

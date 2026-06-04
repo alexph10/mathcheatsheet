@@ -1,0 +1,53 @@
+\section{Sequences}
+
+\begin{definition}[Sequence]
+A sequence is a function $a : \N \to \R$, written $\{a_n\}_{n \ge 1}$ or $(a_n)$.
+We say $a_n \to L$ (or $\lim_{n\to\infty} a_n = L$) if for every $\eps > 0$ there exists $N$
+such that $|a_n - L| < \eps$ for all $n \ge N$.
+\end{definition}
+
+\subsection{Limit laws and the function-limit bridge}
+All algebraic limit laws (sum, product, quotient with nonzero denominator) carry over
+from function limits. The most useful bridge:
+
+\begin{theorem}
+If $f : [1,\infty) \to \R$ is such that $a_n = f(n)$ and $\lim_{x\to\infty} f(x) = L$,
+then $\lim_{n\to\infty} a_n = L$.
+\end{theorem}
+
+So you can apply L'H\^opital's rule to $f(x)$ to evaluate $\lim_{n\to\infty} a_n$.
+
+\subsection{Monotone convergence}
+\begin{theorem}[Monotone Convergence]
+A monotone sequence converges iff it is bounded.
+\end{theorem}
+
+\subsection{Standard limits}
+\begin{keybox}[Memorize]
+\[
+\lim_{n\to\infty} \frac{1}{n^p} = 0\ (p > 0), \quad
+\lim_{n\to\infty} r^n = 0 \text{ if } |r| < 1, \quad
+\lim_{n\to\infty} \sqrt[n]{n} = 1,
+\]
+\[
+\lim_{n\to\infty} \sqrt[n]{c} = 1\ (c > 0), \quad
+\lim_{n\to\infty} \Bigl(1 + \tfrac{x}{n}\Bigr)^n = e^x, \quad
+\lim_{n\to\infty} \frac{n!}{n^n} = 0.
+\]
+\end{keybox}
+
+\begin{example}
+$\displaystyle a_n = \frac{n^2 + 3}{2n^2 - n} \;\to\; \tfrac{1}{2}$ (divide top and bottom by $n^2$).
+\end{example}
+
+\begin{example}[Squeeze]
+$\displaystyle 0 \le \frac{\sin n}{n} \le \frac{1}{n} \;\Rightarrow\; \frac{\sin n}{n} \to 0.$
+\end{example}
+
+\begin{pitfallbox}
+\begin{itemize}[leftmargin=*,nosep]
+  \item Convergence of $\{a_n\}$ has nothing to do with convergence of the \emph{series} $\sum a_n$
+        --- that is a different question (next section).
+  \item $a_n \to 0$ does not imply $\sum a_n$ converges (e.g.\ harmonic series).
+\end{itemize}
+\end{pitfallbox}

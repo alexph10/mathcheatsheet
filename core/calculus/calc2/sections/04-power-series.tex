@@ -1,0 +1,60 @@
+\section{Power Series}
+
+\begin{definition}
+A \emph{power series centered at $a$} is
+\[ \sum_{n=0}^\infty c_n (x - a)^n. \]
+Its set of $x$ where the series converges is an interval centered at $a$; the half-width is the
+\emph{radius of convergence} $R \in [0, \infty]$.
+\end{definition}
+
+\subsection{Finding the radius of convergence}
+Apply the ratio (or root) test to the variable-$x$ series:
+\[ \frac{1}{R} = \lim_{n\to\infty} \left| \frac{c_{n+1}}{c_n} \right|
+\quad \text{or} \quad
+\frac{1}{R} = \limsup_{n\to\infty} \sqrt[n]{|c_n|}. \]
+(Use $R = \infty$ if the limit is $0$, $R = 0$ if it is $\infty$.) The series converges
+absolutely on $(a - R, a + R)$ and diverges for $|x - a| > R$. Behavior at the
+endpoints $x = a \pm R$ must be checked separately.
+
+\begin{example}
+$\sum_{n=0}^\infty x^n / n!$: ratio $= |x| / (n+1) \to 0$ for all $x$. So $R = \infty$ and the
+series is $e^x$.
+\end{example}
+
+\begin{example}
+$\sum_{n=1}^\infty x^n / n$: ratio $= |x| \cdot n/(n+1) \to |x|$, so $R = 1$. At $x = 1$ harmonic
+(diverges); at $x = -1$ alternating harmonic (converges conditionally). Interval $[-1, 1)$.
+\end{example}
+
+\subsection{Algebra and calculus of power series}
+Inside the open interval of convergence, a power series defines an infinitely differentiable
+function; you can differentiate and integrate term-by-term, and the result has the same radius
+of convergence (endpoints may change):
+\[
+f(x) = \sum c_n (x-a)^n
+\;\Rightarrow\;
+f'(x) = \sum n c_n (x-a)^{n-1},
+\quad
+\int f \dx = C + \sum \tfrac{c_n}{n+1} (x-a)^{n+1}.
+\]
+
+\begin{example}[Trick]
+$\displaystyle \frac{1}{1 - x} = \sum_{n=0}^\infty x^n$ for $|x| < 1$. Differentiate:
+$\displaystyle \frac{1}{(1-x)^2} = \sum_{n=1}^\infty n x^{n-1}$.
+Integrate: $\displaystyle -\ln(1 - x) = \sum_{n=1}^\infty \frac{x^n}{n}$.
+\end{example}
+
+\subsection{Multiplying power series}
+\[
+\Bigl(\sum a_n x^n\Bigr)\!\Bigl(\sum b_n x^n\Bigr) = \sum_{n=0}^\infty c_n x^n,
+\qquad c_n = \sum_{k=0}^n a_k b_{n-k}\ \text{(Cauchy product)}.
+\]
+
+\begin{pitfallbox}
+\begin{itemize}[leftmargin=*,nosep]
+  \item Endpoints must be tested by hand --- the ratio test never decides them.
+  \item Term-by-term differentiation works only on the \emph{open} interval $(a-R, a+R)$.
+  \item Substitution: if you know a series for $f(x)$, then $f(g(x))$ may be obtained by
+        substitution only when $|g(x)| < R$.
+\end{itemize}
+\end{pitfallbox}

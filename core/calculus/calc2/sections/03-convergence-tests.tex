@@ -1,0 +1,77 @@
+\section{Convergence Tests}
+
+A decision tree for positive-term series ($a_n \ge 0$) and one extra tool for sign-changing series.
+
+\subsection{Integral test}
+\begin{theorem}
+If $f$ is positive, continuous, and decreasing on $[1,\infty)$ with $a_n = f(n)$, then
+$\sum a_n$ and $\int_1^\infty f(x) \dx$ either both converge or both diverge.
+\end{theorem}
+
+\subsection{Comparison tests}
+\begin{theorem}[Direct Comparison]
+Suppose $0 \le a_n \le b_n$ for all $n \ge N$.
+\begin{itemize}[leftmargin=*,nosep]
+  \item If $\sum b_n$ converges, so does $\sum a_n$.
+  \item If $\sum a_n$ diverges, so does $\sum b_n$.
+\end{itemize}
+\end{theorem}
+
+\begin{theorem}[Limit Comparison]
+If $a_n, b_n > 0$ and $\displaystyle \lim_{n\to\infty} \frac{a_n}{b_n} = c$ with $0 < c < \infty$,
+then $\sum a_n$ and $\sum b_n$ behave alike (both converge or both diverge).
+\end{theorem}
+
+\subsection{Ratio and root tests}
+\begin{theorem}[Ratio Test]
+Let $\displaystyle L = \lim_{n\to\infty} \left| \frac{a_{n+1}}{a_n} \right|$. Then
+\[
+\sum a_n \text{ converges absolutely if } L < 1, \quad
+\text{diverges if } L > 1, \quad
+\text{test inconclusive if } L = 1.
+\]
+\end{theorem}
+
+\begin{theorem}[Root Test]
+Let $\displaystyle L = \lim_{n\to\infty} \sqrt[n]{|a_n|}$. Same conclusions as the ratio test
+($L<1$ converges absolutely, $L>1$ diverges, $L=1$ inconclusive).
+\end{theorem}
+
+\noindent Use the ratio test when $a_n$ involves factorials or exponentials;
+the root test when $a_n$ has a clean $n$-th power.
+
+\subsection{Alternating Series Test (Leibniz)}
+\begin{theorem}
+If $b_n > 0$, $b_n$ is eventually decreasing, and $b_n \to 0$, then
+\[ \sum_{n=1}^\infty (-1)^{n} b_n \quad \text{converges.} \]
+Moreover the truncation error $|S - S_N| \le b_{N+1}$.
+\end{theorem}
+
+\subsection{Absolute vs.\ conditional convergence}
+\begin{itemize}[leftmargin=*,nosep]
+  \item $\sum a_n$ converges \textbf{absolutely} if $\sum |a_n|$ converges. Absolute convergence
+        $\Rightarrow$ convergence.
+  \item It converges \textbf{conditionally} if it converges but not absolutely (e.g.\
+        $\sum (-1)^n / n$).
+  \item Riemann rearrangement: a conditionally convergent real series can be rearranged to sum to
+        \emph{any} real number, or to diverge. Absolutely convergent series cannot.
+\end{itemize}
+
+\subsection{Strategy}
+\begin{keybox}[Picking a test]
+\begin{enumerate}[leftmargin=*,nosep]
+  \item \textbf{$n$-th term test} --- does $a_n \to 0$? If not, diverges.
+  \item \textbf{Geometric / $p$-series} --- can you recognize the form?
+  \item \textbf{Alternating} signs $\Rightarrow$ try Leibniz.
+  \item \textbf{Factorials / exponentials} $\Rightarrow$ ratio test.
+  \item \textbf{Powers of $n$} (like $a_n = b_n^n$) $\Rightarrow$ root test.
+  \item \textbf{Rational in $n$ / polynomials} $\Rightarrow$ limit comparison with a $p$-series.
+  \item \textbf{$a_n = f(n)$ with $f$ easy to integrate} $\Rightarrow$ integral test.
+\end{enumerate}
+\end{keybox}
+
+\begin{example}[Ratio test]
+$\displaystyle \sum \frac{n!}{n^n}$:
+$\left|\tfrac{a_{n+1}}{a_n}\right| = \tfrac{(n+1)!}{(n+1)^{n+1}} \cdot \tfrac{n^n}{n!}
+= \tfrac{n^n}{(n+1)^n} = \tfrac{1}{(1+1/n)^n} \to 1/e < 1$. Converges.
+\end{example}

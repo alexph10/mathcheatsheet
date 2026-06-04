@@ -1,0 +1,52 @@
+\section{Vectors and Geometry of $\R^3$}
+
+\subsection{Vector basics}
+A vector $\vc{v} = \langle v_1, v_2, v_3 \rangle$ has magnitude $\lVert \vc{v} \rVert = \sqrt{v_1^2 + v_2^2 + v_3^2}$ and direction $\hat{\vc{v}} = \vc{v} / \lVert \vc{v} \rVert$.
+
+\subsection{Dot product}
+\[ \vc{u} \dotp \vc{v} = u_1 v_1 + u_2 v_2 + u_3 v_3 = \lVert \vc{u} \rVert \lVert \vc{v} \rVert \cos\theta. \]
+
+\begin{itemize}[leftmargin=*,nosep]
+  \item $\vc{u} \perp \vc{v} \iff \vc{u}\dotp\vc{v} = 0$.
+  \item Scalar projection of $\vc{u}$ onto $\vc{v}$: $\text{comp}_{\vc v} \vc u = \dfrac{\vc u \dotp \vc v}{\lVert \vc v \rVert}$.
+  \item Vector projection: $\proj_{\vc v} \vc u = \dfrac{\vc u \dotp \vc v}{\vc v \dotp \vc v} \vc v$.
+\end{itemize}
+
+\subsection{Cross product (in $\R^3$ only)}
+\[ \vc{u} \times \vc{v} =
+\det \begin{pmatrix} \ii & \jj & \kk \\ u_1 & u_2 & u_3 \\ v_1 & v_2 & v_3 \end{pmatrix}, \qquad
+\lVert \vc u \times \vc v \rVert = \lVert \vc u \rVert \lVert \vc v \rVert \sin\theta. \]
+
+\begin{itemize}[leftmargin=*,nosep]
+  \item $\vc{u} \times \vc{v}$ is orthogonal to both $\vc u$ and $\vc v$, with direction by the right-hand rule.
+  \item $\lVert \vc u \times \vc v \rVert$ equals the area of the parallelogram spanned by $\vc u, \vc v$.
+  \item Triple scalar product: $\vc u \dotp (\vc v \times \vc w) = \det[\vc u\ \vc v\ \vc w]$, equal to the signed volume of the parallelepiped.
+  \item Anticommutative: $\vc u \times \vc v = -\vc v \times \vc u$.
+\end{itemize}
+
+\subsection{Lines and planes}
+\textbf{Line} through $P_0$ in direction $\vc{v}$:
+\[ \rr(t) = \vc{r}_0 + t \vc{v}, \qquad \text{parametric: } x = x_0 + t v_1,\ldots \]
+
+\textbf{Plane} through $P_0$ with normal $\nn = \langle a, b, c \rangle$:
+\[ a (x - x_0) + b (y - y_0) + c (z - z_0) = 0. \]
+
+\textbf{Distance from point $P$ to plane $ax + by + cz = d$:}
+\[ D = \frac{|a x_P + b y_P + c z_P - d|}{\sqrt{a^2 + b^2 + c^2}}. \]
+
+\textbf{Distance from point $P$ to line $\rr_0 + t \vc v$:}
+\[ D = \frac{\lVert (\vc r_P - \vc r_0) \times \vc v \rVert}{\lVert \vc v \rVert}. \]
+
+\subsection{Quadric surfaces (read $\Rightarrow$ recognize)}
+\[
+\renewcommand{\arraystretch}{1.3}
+\begin{array}{l|l}
+\text{Equation} & \text{Surface} \\\hline
+\tfrac{x^2}{a^2} + \tfrac{y^2}{b^2} + \tfrac{z^2}{c^2} = 1 & \text{Ellipsoid} \\
+\tfrac{x^2}{a^2} + \tfrac{y^2}{b^2} - \tfrac{z^2}{c^2} = 1 & \text{Hyperboloid of one sheet} \\
+\tfrac{x^2}{a^2} + \tfrac{y^2}{b^2} - \tfrac{z^2}{c^2} = -1 & \text{Hyperboloid of two sheets} \\
+z = \tfrac{x^2}{a^2} + \tfrac{y^2}{b^2} & \text{Elliptic paraboloid} \\
+z = \tfrac{x^2}{a^2} - \tfrac{y^2}{b^2} & \text{Hyperbolic paraboloid (saddle)} \\
+\tfrac{x^2}{a^2} + \tfrac{y^2}{b^2} = \tfrac{z^2}{c^2} & \text{Cone}
+\end{array}
+\]

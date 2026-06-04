@@ -1,0 +1,64 @@
+\section{Differentiation Rules}
+
+\subsection{Algebraic rules}
+For differentiable $f, g$ and constant $c$:
+\[
+\begin{aligned}
+(cf)' &= c f', & (f \pm g)' &= f' \pm g', \\
+(fg)' &= f'g + fg' & \text{(product)}, & \\
+\left(\tfrac{f}{g}\right)' &= \frac{f'g - fg'}{g^2} & \text{(quotient, } g \neq 0\text{)}, & \\
+(f \circ g)'(x) &= f'(g(x)) \, g'(x) & \text{(chain rule)}.
+\end{aligned}
+\]
+
+\subsection{Elementary derivatives}
+\begin{keybox}[Table to memorize]
+\[
+\renewcommand{\arraystretch}{1.3}
+\begin{array}{l|l}
+f(x) & f'(x) \\\hline
+x^n & n x^{n-1} \\
+e^x & e^x \\
+a^x & a^x \ln a \\
+\ln x & 1/x \\
+\log_a x & 1/(x \ln a) \\
+\sin x & \cos x \\
+\cos x & -\sin x \\
+\tan x & \sec^2 x \\
+\cot x & -\csc^2 x \\
+\sec x & \sec x \tan x \\
+\csc x & -\csc x \cot x \\
+\arcsin x & 1/\sqrt{1 - x^2} \\
+\arccos x & -1/\sqrt{1 - x^2} \\
+\arctan x & 1/(1 + x^2) \\
+\sinh x & \cosh x \\
+\cosh x & \sinh x \\
+\tanh x & \sech^2 x
+\end{array}
+\]
+\end{keybox}
+
+\subsection{Implicit differentiation}
+When $y$ is defined implicitly by an equation $F(x,y) = 0$, differentiate both sides
+with respect to $x$, treating $y$ as a function of $x$ and applying the chain rule:
+\[ \frac{d}{dx}\bigl[y^n\bigr] = n y^{n-1} \cdot \frac{dy}{dx}. \]
+
+\begin{example}[Circle]
+Differentiate $x^2 + y^2 = 25$:
+\[ 2x + 2y\,\tfrac{dy}{dx} = 0 \;\Longrightarrow\; \tfrac{dy}{dx} = -\tfrac{x}{y}. \]
+At $(3,4)$: slope $= -3/4$.
+\end{example}
+
+\subsection{Logarithmic differentiation}
+Useful when $f$ is a product/quotient/power of complicated factors, especially
+$f(x)^{g(x)}$. Take $\ln$ first:
+\[ \ln y = g(x) \ln f(x) \;\Longrightarrow\; \tfrac{y'}{y} = g'(x) \ln f(x) + g(x)\,\tfrac{f'(x)}{f(x)}. \]
+
+\begin{example}
+$y = x^x \implies \ln y = x \ln x \implies \tfrac{y'}{y} = \ln x + 1 \implies y' = x^x (\ln x + 1).$
+\end{example}
+
+\subsection{Higher-order derivatives}
+$f^{(n)}(x)$ measures, loosely, how fast $f^{(n-1)}$ is changing. Common ones:
+\[ \frac{d^n}{dx^n} e^{ax} = a^n e^{ax}, \qquad
+   \frac{d^n}{dx^n} \sin x = \sin\!\Bigl(x + \tfrac{n\pi}{2}\Bigr). \]

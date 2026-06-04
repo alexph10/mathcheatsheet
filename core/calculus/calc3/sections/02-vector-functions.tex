@@ -1,0 +1,56 @@
+\section{Vector-Valued Functions and Space Curves}
+
+A space curve is $\rr(t) = \langle x(t), y(t), z(t) \rangle$.
+Derivatives and integrals are taken component-wise.
+
+\subsection{Calculus of $\rr(t)$}
+\[
+\rr'(t) = \langle x'(t), y'(t), z'(t) \rangle, \qquad
+\int \rr(t) \dt = \Bigl\langle \int x(t) \dt, \int y(t) \dt, \int z(t) \dt \Bigr\rangle.
+\]
+Geometric meaning: $\rr'(t)$ is tangent to the curve and equals velocity if $t$ is time;
+$\rr''(t)$ is acceleration.
+
+\subsection{Differentiation rules}
+\[
+\begin{aligned}
+&(\vc u + \vc v)' = \vc u' + \vc v', \quad (c \vc u)' = c \vc u',\\
+&(f \vc u)' = f' \vc u + f \vc u' \quad (f \text{ scalar function}), \\
+&(\vc u \dotp \vc v)' = \vc u' \dotp \vc v + \vc u \dotp \vc v', \\
+&(\vc u \times \vc v)' = \vc u' \times \vc v + \vc u \times \vc v'.
+\end{aligned}
+\]
+
+\subsection{Arc length}
+For a smooth curve on $[a,b]$:
+\[ L = \int_a^b \lVert \rr'(t) \rVert \dt. \]
+The arc length parameter is $s(t) = \int_a^t \lVert \rr'(u) \rVert \,du$.
+
+\subsection{Unit tangent, normal, binormal}
+\[
+\TT(t) = \frac{\rr'(t)}{\lVert \rr'(t) \rVert}, \qquad
+\NN(t) = \frac{\TT'(t)}{\lVert \TT'(t) \rVert}, \qquad
+\vc B(t) = \TT \times \NN.
+\]
+
+\subsection{Curvature and torsion}
+\[
+\kappa = \left\lVert \frac{d\TT}{ds} \right\rVert
+= \frac{\lVert \rr'(t) \times \rr''(t) \rVert}{\lVert \rr'(t) \rVert^3}.
+\]
+For a plane curve $y = f(x)$: $\kappa = \dfrac{|f''(x)|}{(1 + f'(x)^2)^{3/2}}$.
+
+\begin{intuition}
+$\kappa$ is the rate at which the unit tangent changes direction per unit arc length ---
+``how fast you turn.'' A line has $\kappa = 0$; a circle of radius $a$ has $\kappa = 1/a$.
+The radius of curvature is $\rho = 1/\kappa$.
+\end{intuition}
+
+\subsection{Tangential and normal components of acceleration}
+For motion $\rr(t)$:
+\[
+\vc{a} = a_T \TT + a_N \NN, \qquad
+a_T = \frac{\rr'\dotp \rr''}{\lVert \rr'\rVert}, \qquad
+a_N = \frac{\lVert \rr' \times \rr''\rVert}{\lVert \rr'\rVert} = \kappa \lVert \rr'\rVert^2.
+\]
+$a_T$ changes speed; $a_N$ changes direction.

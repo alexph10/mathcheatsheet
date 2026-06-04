@@ -1,0 +1,54 @@
+\section{Applications of the Integral}
+
+\subsection{Area between curves}
+For continuous $f \ge g$ on $[a,b]$:
+\[ A = \int_a^b \bigl(f(x) - g(x)\bigr) \dx. \]
+If the curves cross, split the integral at the intersection points and take
+$|f - g|$ piecewise.
+
+\subsection{Volumes of revolution}
+\textbf{Disks/washers} (rotation about a horizontal axis $y = c$):
+\[ V = \pi \int_a^b \Bigl( (R(x) - c)^2 - (r(x) - c)^2 \Bigr) \dx, \]
+where $R, r$ are the outer/inner radii as functions of $x$.
+
+\textbf{Cylindrical shells} (rotation about the $y$-axis):
+\[ V = 2\pi \int_a^b x \, |f(x)| \dx. \]
+
+\begin{example}[Cone]
+Rotate $y = x$ for $x \in [0,h]$ about the $x$-axis (disks):
+$V = \pi \int_0^h x^2 \dx = \pi h^3 / 3$.
+\end{example}
+
+\subsection{Arc length}
+For $y = f(x)$ continuously differentiable on $[a,b]$:
+\[ L = \int_a^b \sqrt{1 + (f'(x))^2} \dx. \]
+
+\subsection{Surface area of revolution}
+Rotation of $y = f(x) \ge 0$ about the $x$-axis:
+\[ S = 2\pi \int_a^b f(x) \sqrt{1 + (f'(x))^2} \dx. \]
+
+\subsection{Average value of a function}
+\[ \bar{f} = \frac{1}{b - a} \int_a^b f(x) \dx. \]
+
+\subsection{Physics applications}
+\begin{itemize}[leftmargin=*,nosep]
+  \item \textbf{Displacement vs.\ distance:} $\Delta s = \int_a^b v(t) \dt$ (signed); distance traveled $= \int_a^b |v(t)| \dt$.
+  \item \textbf{Work (variable force along a line):} $W = \int_a^b F(x) \dx$.
+  \item \textbf{Center of mass} of a thin rod of density $\rho(x)$ on $[a,b]$:
+  \[ \bar{x} = \frac{\int_a^b x \rho(x) \dx}{\int_a^b \rho(x) \dx}. \]
+\end{itemize}
+
+\subsection{Differential equations: separable}
+A separable ODE $\dfrac{dy}{dx} = g(x) h(y)$ is integrated by separating variables:
+\[ \int \frac{\dy}{h(y)} = \int g(x) \dx + C. \]
+
+\begin{example}[Newton's law of cooling]
+$T'(t) = -k(T - T_\infty) \;\Rightarrow\; \int \frac{dT}{T - T_\infty} = -k \int \dt
+\;\Rightarrow\; T(t) = T_\infty + (T_0 - T_\infty) e^{-kt}.$
+\end{example}
+
+\begin{keybox}[End-of-course mantra]
+Calc 1 = limits make derivatives precise, derivatives make integrals computable (via the FTC),
+and the two operations are inverses of one another. Everything else --- optimization, related rates,
+volumes, arc length, ODEs --- is a re-application of those two ideas to a geometric or physical setting.
+\end{keybox}

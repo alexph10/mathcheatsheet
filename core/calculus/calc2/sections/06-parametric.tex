@@ -1,0 +1,37 @@
+\section{Parametric Curves}
+
+A parametric curve is $\bigl(x(t), y(t)\bigr)$ for $t$ in some interval $I$. Same trace can
+arise from many parametrizations.
+
+\subsection{Slope and second derivative}
+Assuming $x'(t) \neq 0$:
+\[
+\frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{y'(t)}{x'(t)},
+\qquad
+\frac{d^2 y}{dx^2} = \frac{d}{dx}\!\left(\frac{dy}{dx}\right)
+= \frac{1}{x'(t)} \frac{d}{dt}\!\left(\frac{y'(t)}{x'(t)}\right).
+\]
+
+\subsection{Arc length}
+For a smooth curve with $x', y'$ continuous on $[\alpha, \beta]$:
+\[ L = \int_\alpha^\beta \sqrt{x'(t)^2 + y'(t)^2} \dt. \]
+
+\subsection{Area under a parametric curve}
+If $y \ge 0$ and $x(t)$ is monotone on $[\alpha, \beta]$:
+\[ A = \int_\alpha^\beta y(t) \, x'(t) \dt. \]
+(Mind the sign of $x'(t)$ and the direction of traversal.)
+
+\subsection{Surface of revolution (about the $x$-axis)}
+\[ S = 2\pi \int_\alpha^\beta y(t) \sqrt{x'(t)^2 + y'(t)^2} \dt. \]
+
+\begin{example}[Cycloid]
+$x = r(t - \sin t)$, $y = r(1 - \cos t)$, $t \in [0, 2\pi]$.
+Then $x' = r(1 - \cos t)$, $y' = r \sin t$, and
+\[ L = \int_0^{2\pi} \sqrt{r^2 (1 - \cos t)^2 + r^2 \sin^2 t} \dt
+= r \int_0^{2\pi} \sqrt{2 - 2 \cos t} \dt = 8r. \]
+\end{example}
+
+\begin{pitfallbox}
+A parametric curve can retrace itself or cross itself --- the integrals above measure the curve
+\emph{as traversed}, multiplicities included.
+\end{pitfallbox}

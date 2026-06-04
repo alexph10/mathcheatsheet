@@ -1,0 +1,45 @@
+\section{The Derivative}
+
+\begin{definition}[Derivative]
+\[ f'(a) \;=\; \lim_{h \to 0} \frac{f(a+h) - f(a)}{h} \;=\; \lim_{x \to a} \frac{f(x) - f(a)}{x - a}, \]
+when the limit exists. $f$ is differentiable at $a$ iff $f'(a)$ exists.
+\end{definition}
+
+\begin{intuition}
+$f'(a)$ is the slope of the tangent line to $y = f(x)$ at $x = a$, equivalently the instantaneous
+rate of change of $f$ at $a$. The linear function $L(x) = f(a) + f'(a)(x-a)$ is the
+\emph{best linear approximation} to $f$ near $a$.
+\end{intuition}
+
+\subsection{Differentiability and continuity}
+\begin{proposition}
+If $f$ is differentiable at $a$, then $f$ is continuous at $a$.
+\end{proposition}
+\noindent The converse is false: $f(x) = |x|$ is continuous at $0$ but not differentiable there
+(left slope $-1$, right slope $+1$).
+
+\subsection{Notation}
+\[
+f'(x), \quad y', \quad \frac{dy}{dx}, \quad \frac{df}{dx}, \quad Df(x), \quad \dot{y}\ \text{(physics, } t\text{-derivative)}.
+\]
+Higher derivatives: $f''$, $f^{(n)}$, $\tfrac{d^n y}{dx^n}$.
+
+\subsection{Geometric and physical meaning}
+\begin{itemize}[leftmargin=*,nosep]
+  \item \textbf{Tangent line at $x = a$:} $y = f(a) + f'(a)(x-a)$.
+  \item \textbf{Normal line at $x = a$:} $y = f(a) - \tfrac{1}{f'(a)}(x-a)$ (when $f'(a) \neq 0$).
+  \item \textbf{Velocity / acceleration:} if $s(t)$ is position, then $v(t) = s'(t)$, $a(t) = s''(t)$.
+\end{itemize}
+
+\begin{example}[Derivative from the definition]
+For $f(x) = x^2$,
+\[ f'(x) = \lim_{h \to 0} \frac{(x+h)^2 - x^2}{h} = \lim_{h \to 0} \frac{2xh + h^2}{h} = \lim_{h \to 0} (2x + h) = 2x. \]
+\end{example}
+
+\begin{pitfallbox}
+\begin{itemize}[leftmargin=*,nosep]
+  \item Differentiability requires a \emph{two-sided} limit of the difference quotient.
+  \item Cusps and corners are continuous but \emph{not} differentiable.
+  \item Vertical tangents ($f'\to\pm\infty$) are also non-differentiable.
+\end{itemize}
+\end{pitfallbox}

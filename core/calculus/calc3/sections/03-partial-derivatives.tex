@@ -1,0 +1,52 @@
+\section{Partial Derivatives}
+
+For $f : \R^n \to \R$ (often $n = 2$ or $3$).
+
+\subsection{Limits and continuity}
+$\displaystyle \lim_{(x,y)\to(a,b)} f(x,y) = L$ requires the same value along \emph{every}
+path of approach. To show a limit does not exist: find two paths giving different limits.
+
+\begin{example}[Path-dependence]
+$f(x,y) = \tfrac{xy}{x^2+y^2}$ at $(0,0)$: along $y = 0$, $f \equiv 0$; along $y = x$, $f = 1/2$.
+Limit does not exist.
+\end{example}
+
+\subsection{Partial derivatives}
+\[
+\frac{\partial f}{\partial x}(a, b) = \lim_{h \to 0} \frac{f(a + h, b) - f(a, b)}{h}.
+\]
+Compute by treating other variables as constants. Higher-order partials: $f_{xy} = (f_x)_y$.
+
+\begin{theorem}[Clairaut]
+If $f_{xy}$ and $f_{yx}$ are continuous on an open set containing $(a,b)$, then
+$f_{xy}(a,b) = f_{yx}(a,b)$.
+\end{theorem}
+
+\subsection{Differentiability and tangent plane}
+$f$ is \emph{differentiable} at $(a,b)$ if there exists a linear map $L$ such that
+\[ f(a + h, b + k) = f(a,b) + L(h,k) + o(\sqrt{h^2 + k^2}). \]
+If $f_x, f_y$ exist and are continuous in a neighborhood of $(a,b)$, then $f$ is differentiable there,
+and the tangent plane to $z = f(x,y)$ is
+\[ z = f(a,b) + f_x(a,b) (x - a) + f_y(a,b) (y - b). \]
+
+\subsection{Total differential and linear approximation}
+\[ df = f_x \dx + f_y \dy + f_z \dz, \qquad f(\vc x + d\vc x) \approx f(\vc x) + \grad f(\vc x) \dotp d\vc x. \]
+
+\subsection{Chain rule}
+\textbf{One independent variable:} $z = f(x(t), y(t))$,
+\[ \frac{dz}{dt} = \frac{\partial f}{\partial x}\frac{dx}{dt} + \frac{\partial f}{\partial y}\frac{dy}{dt}. \]
+
+\textbf{Several independent variables:} $z = f(x(s,t), y(s,t))$,
+\[ \frac{\partial z}{\partial s} = f_x \frac{\partial x}{\partial s} + f_y \frac{\partial y}{\partial s}. \]
+
+\textbf{General matrix form:} for $f: \R^n \to \R^m$ and $g: \R^k \to \R^n$,
+\[ J_{f \circ g}(\vc x) = J_f(g(\vc x)) \, J_g(\vc x). \]
+
+\subsection{Implicit differentiation}
+If $F(x, y, z) = 0$ defines $z$ implicitly as a function of $x, y$:
+\[ \frac{\partial z}{\partial x} = -\frac{F_x}{F_z}, \qquad \frac{\partial z}{\partial y} = -\frac{F_y}{F_z}, \qquad (F_z \neq 0). \]
+
+\begin{pitfallbox}
+Existence of $f_x$ and $f_y$ at a point does \emph{not} imply $f$ is even continuous there.
+Continuous partials in a neighborhood is the safe sufficient condition for differentiability.
+\end{pitfallbox}

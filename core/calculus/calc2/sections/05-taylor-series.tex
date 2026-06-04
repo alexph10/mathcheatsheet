@@ -1,0 +1,61 @@
+\section{Taylor and Maclaurin Series}
+
+\begin{definition}[Taylor series]
+If $f$ has derivatives of all orders at $a$, its Taylor series at $a$ is
+\[ T_f(x; a) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x - a)^n. \]
+A \emph{Maclaurin series} is the special case $a = 0$.
+\end{definition}
+
+\subsection{Taylor's theorem with remainder}
+For $f$ that is $(n+1)$-times differentiable on an interval containing $a$ and $x$:
+\[
+f(x) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (x - a)^k + R_n(x),
+\]
+with the Lagrange form of the remainder
+\[ R_n(x) = \frac{f^{(n+1)}(\xi)}{(n+1)!} (x - a)^{n+1}, \quad \xi \text{ between } a \text{ and } x. \]
+If $R_n(x) \to 0$ as $n \to \infty$, then $f$ equals its Taylor series on that interval.
+
+\subsection{Essential Maclaurin series}
+\begin{keybox}[Memorize --- all centered at $0$]
+\[
+\renewcommand{\arraystretch}{1.6}
+\begin{array}{l l l}
+e^x = \displaystyle\sum_{n=0}^\infty \dfrac{x^n}{n!} & \text{all } x \\
+\sin x = \displaystyle\sum_{n=0}^\infty \dfrac{(-1)^n x^{2n+1}}{(2n+1)!} & \text{all } x \\
+\cos x = \displaystyle\sum_{n=0}^\infty \dfrac{(-1)^n x^{2n}}{(2n)!} & \text{all } x \\
+\dfrac{1}{1 - x} = \displaystyle\sum_{n=0}^\infty x^n & |x| < 1 \\
+\ln(1 + x) = \displaystyle\sum_{n=1}^\infty \dfrac{(-1)^{n+1} x^n}{n} & -1 < x \le 1 \\
+\arctan x = \displaystyle\sum_{n=0}^\infty \dfrac{(-1)^n x^{2n+1}}{2n+1} & |x| \le 1 \\
+(1 + x)^\alpha = \displaystyle\sum_{n=0}^\infty \binom{\alpha}{n} x^n & |x| < 1
+\end{array}
+\]
+where $\binom{\alpha}{n} = \tfrac{\alpha (\alpha - 1)\cdots(\alpha - n + 1)}{n!}$ (binomial series).
+\end{keybox}
+
+\subsection{Using known series}
+Almost every Taylor problem on an exam is solved by manipulating the table above:
+substitute, differentiate, integrate, or multiply.
+
+\begin{example}[Substitution]
+$\displaystyle e^{-x^2} = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{n!}.$
+\end{example}
+
+\begin{example}[Indefinite integration via series]
+$\displaystyle \int e^{-x^2} \dx = C + \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{n! (2n+1)}.$
+\end{example}
+
+\begin{example}[Limits via series]
+$\displaystyle \lim_{x \to 0} \frac{\sin x - x}{x^3}$:
+$\sin x = x - \tfrac{x^3}{6} + O(x^5)$, so numerator $= -x^3/6 + O(x^5)$, ratio $\to -1/6$.
+\end{example}
+
+\subsection{Error estimation}
+For an alternating Taylor series with terms decreasing in magnitude, the error after $N$ terms
+is at most the first omitted term (alternating series remainder).
+Otherwise use the Lagrange remainder bound:
+\[ |R_n(x)| \le \frac{M}{(n+1)!} |x - a|^{n+1}, \qquad M = \max_{|\xi - a| \le |x - a|} |f^{(n+1)}(\xi)|. \]
+
+\begin{pitfallbox}
+A function can have a Taylor series at $a$ that converges everywhere but does \emph{not} equal
+the function (e.g.\ $f(x) = e^{-1/x^2}$ at $0$). Equality requires $R_n(x) \to 0$.
+\end{pitfallbox}

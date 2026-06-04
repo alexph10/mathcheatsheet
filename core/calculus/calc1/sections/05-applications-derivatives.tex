@@ -1,0 +1,88 @@
+\section{Applications of the Derivative}
+
+\subsection{Mean Value Theorem and Rolle's Theorem}
+\begin{theorem}[Rolle]
+If $f$ is continuous on $[a,b]$, differentiable on $(a,b)$, and $f(a) = f(b)$, then there
+exists $c \in (a,b)$ with $f'(c) = 0$.
+\end{theorem}
+
+\begin{theorem}[Mean Value Theorem (MVT)]
+If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then there exists $c \in (a,b)$ with
+\[ f'(c) = \frac{f(b) - f(a)}{b - a}. \]
+\end{theorem}
+
+\noindent\emph{Reading:} the instantaneous rate matches the average rate somewhere on the interval.
+Corollary: if $f' \equiv 0$ on an interval, $f$ is constant there.
+
+\subsection{Monotonicity and concavity}
+\begin{itemize}[leftmargin=*,nosep]
+  \item $f' > 0$ on $I$ $\Rightarrow$ $f$ strictly increasing on $I$.
+  \item $f' < 0$ on $I$ $\Rightarrow$ $f$ strictly decreasing on $I$.
+  \item $f'' > 0$ $\Rightarrow$ $f$ \emph{concave up} (graph above tangent lines).
+  \item $f'' < 0$ $\Rightarrow$ $f$ \emph{concave down}.
+  \item Inflection point: $f''$ changes sign.
+\end{itemize}
+
+\subsection{Local extrema}
+A \emph{critical point} is a point where $f'(c) = 0$ or $f'(c)$ does not exist. Local extrema
+of a differentiable function occur only at critical points (Fermat).
+
+\begin{keybox}[First / Second derivative tests]
+\textbf{First derivative test (at a critical point $c$):}
+\[
+\begin{array}{l|l}
+f' \text{ changes} & \text{conclusion at } c \\\hline
++ \to - & \text{local max} \\
+- \to + & \text{local min} \\
+\text{no sign change} & \text{neither (inflection or saddle)}
+\end{array}
+\]
+\textbf{Second derivative test:} if $f'(c) = 0$ and $f''(c) > 0$ then local min;
+if $f''(c) < 0$ then local max; if $f''(c) = 0$ the test is inconclusive.
+\end{keybox}
+
+\subsection{Absolute extrema on $[a,b]$ (closed-interval method)}
+\begin{enumerate}[leftmargin=*,nosep]
+  \item Find critical points of $f$ in $(a,b)$.
+  \item Evaluate $f$ at the critical points and at the endpoints $a,b$.
+  \item The largest of these is the absolute max; the smallest is the absolute min.
+\end{enumerate}
+
+\subsection{Optimization (word problems)}
+\textbf{Recipe.} (1) Identify the quantity to optimize $Q$; (2) draw a picture and label
+variables; (3) write $Q$ as a function of \emph{one} variable using a constraint;
+(4) state the domain; (5) find critical points and test; (6) interpret in context.
+
+\begin{example}[Box of maximum volume]
+Cut squares of side $x$ from a $20\times 20$ sheet and fold up. Volume:
+$V(x) = x(20 - 2x)^2$ for $x \in [0,10]$. Then
+$V'(x) = (20-2x)^2 - 4x(20-2x) = (20-2x)(20-6x)$. Critical points: $x = 10$ (endpoint, $V=0$)
+and $x = 10/3$. Since $V(10/3) > 0$, that is the maximum.
+\end{example}
+
+\subsection{Related rates}
+\textbf{Recipe.} Identify all changing quantities, write an equation relating them
+\emph{at all times}, differentiate both sides with respect to $t$, plug in the instantaneous values.
+
+\begin{example}[Sliding ladder]
+A 10\,ft ladder leans against a wall; bottom slides away at $1$\,ft/s. How fast does the top
+slide down when the bottom is $6$\,ft from the wall?
+
+Let $x$ = distance of foot, $y$ = height of top. Then $x^2 + y^2 = 100$. Differentiate:
+$2x x' + 2y y' = 0$, so $y' = -\tfrac{x}{y} x'$. At $x = 6$, $y = 8$, $x' = 1$, hence
+$y' = -3/4$\,ft/s (negative = descending).
+\end{example}
+
+\subsection{Linear approximation and differentials}
+Near $x = a$:
+\[ f(x) \approx L(x) = f(a) + f'(a)(x - a), \qquad dy = f'(x) \dx. \]
+
+\begin{example}
+$\sqrt{4.04} \approx 2 + \tfrac{1}{2\cdot 2}\cdot 0.04 = 2.01$ (true value $\approx 2.00998$).
+\end{example}
+
+\subsection{Newton's method}
+To solve $f(x) = 0$ iterate
+\[ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}, \]
+i.e.\ replace $f$ by its tangent and find that line's root. Converges quadratically near
+a simple root, provided $f'(x_*) \neq 0$ and $x_0$ is sufficiently close.

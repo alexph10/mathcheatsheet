@@ -1,0 +1,81 @@
+% Shared preamble for Calc 3 notes.
+\usepackage[a4paper,margin=0.9in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{bm}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black!70,
+  urlcolor=blue!60!black,
+  pdftitle={Calculus 3 -- Notes},
+  pdfauthor={mathcheatsheet}
+}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}[definition]{Example}
+
+\theoremstyle{plain}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{corollary}[definition]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{intuition}{Intuition}
+
+\newtcolorbox{keybox}[1][]{
+  enhanced, breakable, colback=blue!4, colframe=blue!55!black,
+  fonttitle=\bfseries, title=#1, left=6pt, right=6pt, top=4pt, bottom=4pt,
+  arc=2pt, boxrule=0.6pt
+}
+\newtcolorbox{pitfallbox}{
+  enhanced, breakable, colback=red!4, colframe=red!55!black,
+  fonttitle=\bfseries, title=Pitfalls, left=6pt, right=6pt, top=4pt, bottom=4pt,
+  arc=2pt, boxrule=0.6pt
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dx}{\,dx}
+\newcommand{\dy}{\,dy}
+\newcommand{\dz}{\,dz}
+\newcommand{\dt}{\,dt}
+\newcommand{\dA}{\,dA}
+\newcommand{\dV}{\,dV}
+\newcommand{\dS}{\,dS}
+\newcommand{\dr}{\,dr}
+\newcommand{\du}{\,du}
+\newcommand{\dv}{\,dv}
+\newcommand{\dth}{\,d\theta}
+\newcommand{\dphi}{\,d\varphi}
+\newcommand{\drho}{\,d\rho}
+\newcommand{\vc}[1]{\mathbf{#1}}     % vector
+\newcommand{\F}{\vc{F}}
+\newcommand{\rr}{\vc{r}}
+\newcommand{\nn}{\vc{n}}
+\newcommand{\TT}{\vc{T}}
+\newcommand{\NN}{\vc{N}}
+\newcommand{\ii}{\vc{i}}
+\newcommand{\jj}{\vc{j}}
+\newcommand{\kk}{\vc{k}}
+\newcommand{\dotp}{\boldsymbol\cdot}
+\newcommand{\grad}{\nabla}
+\DeclareMathOperator{\divg}{div}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\proj}{proj}
+
+\titleformat{\section}{\Large\bfseries\color{blue!40!black}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{blue!25!black}}{\thesubsection}{0.5em}{}

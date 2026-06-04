@@ -1,0 +1,65 @@
+\section{Green, Stokes, and Divergence}
+
+The big three of vector calculus, each saying ``boundary integral $=$ interior integral of a derivative'' and each a generalization of the Fundamental Theorem of Calculus.
+
+\subsection{Green's theorem (2D)}
+Let $D$ be a region in $\R^2$ with positively oriented (counterclockwise) piecewise-smooth boundary $\partial D = C$, and let $P, Q$ have continuous first partials on an open set containing $D$:
+\[ \oint_C P \dx + Q \dy \;=\; \iint_D \!\left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \dA. \]
+
+\textbf{Area corollary:} taking $(P,Q) = (-y/2, x/2)$,
+\[ \text{Area}(D) = \tfrac{1}{2} \oint_{\partial D} x \dy - y \dx. \]
+
+\subsection{Surface integrals}
+For a parametrized surface $\vc r(u, v)$ on a domain $D \subset \R^2$:
+\[ \iint_S f \dS = \iint_D f(\vc r(u,v)) \, \lVert \vc r_u \times \vc r_v \rVert \du \dv. \]
+
+For a graph $z = g(x,y)$:
+\[ \iint_S f \dS = \iint_D f(x, y, g(x,y)) \sqrt{1 + g_x^2 + g_y^2} \dx \dy. \]
+
+\textbf{Flux} of $\F$ across an oriented surface $S$ with unit normal $\nn$:
+\[ \iint_S \F \dotp d\vc S = \iint_S \F \dotp \nn \dS = \iint_D \F(\vc r) \dotp (\vc r_u \times \vc r_v) \du \dv. \]
+
+\subsection{Stokes' theorem (3D)}
+Let $S$ be an oriented piecewise-smooth surface bounded by a positively oriented (right-hand-rule)
+piecewise-smooth simple closed curve $\partial S$:
+\[ \oint_{\partial S} \F \dotp d\rr \;=\; \iint_S (\curl \F) \dotp d\vc S. \]
+A 3D generalization of Green's theorem.
+
+\subsection{Divergence theorem (Gauss)}
+Let $E$ be a solid region with piecewise-smooth boundary surface $S = \partial E$ oriented
+outward, and $\F$ a $C^1$ vector field on an open set containing $E$:
+\[ \iint_{S} \F \dotp d\vc S \;=\; \iiint_E (\divg \F) \dV. \]
+
+\subsection{Unified view}
+\begin{keybox}[The pattern]
+\[
+\renewcommand{\arraystretch}{1.4}
+\begin{array}{l|l|l}
+\text{Theorem} & \text{Boundary integral} & \text{Interior integral} \\\hline
+\text{FTC (Calc 1)} & f(b) - f(a) & \int_a^b f'(x) \dx \\
+\text{FTLI} & f(B) - f(A) & \int_C \grad f \dotp d\rr \\
+\text{Green} & \oint_{\partial D} P\dx + Q\dy & \iint_D (Q_x - P_y) \dA \\
+\text{Stokes} & \oint_{\partial S} \F \dotp d\rr & \iint_S (\curl \F) \dotp d\vc S \\
+\text{Divergence} & \iint_{\partial E} \F \dotp d\vc S & \iiint_E (\divg \F) \dV
+\end{array}
+\]
+\end{keybox}
+
+\subsection{When to use which}
+\begin{itemize}[leftmargin=*,nosep]
+  \item \textbf{Closed curve in the plane:} Green's theorem.
+  \item \textbf{Closed curve in 3D bounding a nice surface:} Stokes (often replaces a nasty line integral with an easy surface integral, or vice versa).
+  \item \textbf{Closed surface bounding a solid:} Divergence theorem (converts a flux integral over a complicated surface into a triple integral, often trivial when $\divg \F$ is simple).
+\end{itemize}
+
+\begin{example}[Divergence theorem]
+$\F = \langle x, y, z\rangle$, $S$ the unit sphere oriented outward.
+$\divg \F = 3$, so flux $= \iiint_{B} 3 \dV = 3 \cdot \tfrac{4\pi}{3} = 4\pi$.
+\end{example}
+
+\begin{pitfallbox}
+\begin{itemize}[leftmargin=*,nosep]
+  \item Orientation matters: Stokes assumes the boundary orientation is induced by the surface normal via the right-hand rule; the divergence theorem requires \emph{outward} normals.
+  \item Hypotheses include smoothness of $\F$ on the relevant region. Singularities of $\F$ inside $E$ invalidate the divergence theorem on $E$ --- split or excise.
+\end{itemize}
+\end{pitfallbox}

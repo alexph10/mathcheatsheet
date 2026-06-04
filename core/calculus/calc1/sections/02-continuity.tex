@@ -1,0 +1,40 @@
+\section{Continuity}
+
+\begin{definition}[Continuity at a point]
+$f$ is continuous at $a$ iff
+\[ \lim_{x \to a} f(x) = f(a). \]
+This requires three things: $f(a)$ is defined, $\lim_{x\to a} f(x)$ exists, and the two are equal.
+\end{definition}
+
+\subsection{Types of discontinuity}
+\begin{itemize}[leftmargin=*,nosep]
+  \item \textbf{Removable:} $\lim_{x\to a} f(x)$ exists but is $\ne f(a)$ (or $f(a)$ is undefined). Plug the hole and you're done.
+  \item \textbf{Jump:} left and right limits exist but differ. Step functions, sign function.
+  \item \textbf{Infinite:} a one-sided limit is $\pm\infty$. Vertical asymptote.
+  \item \textbf{Essential / oscillatory:} no limit exists; e.g.\ $\sin(1/x)$ at $0$.
+\end{itemize}
+
+\subsection{Continuity on an interval and standard theorems}
+A function is continuous on $[a,b]$ if it is continuous at every interior point and
+one-sided continuous at the endpoints. Polynomials, $\sin, \cos, e^x$, and rational
+functions on their domain are continuous everywhere they are defined.
+
+\begin{theorem}[Intermediate Value Theorem]
+If $f$ is continuous on $[a,b]$ and $N$ lies between $f(a)$ and $f(b)$, then there exists
+$c \in [a,b]$ with $f(c) = N$.
+\end{theorem}
+
+\begin{theorem}[Extreme Value Theorem]
+If $f$ is continuous on $[a,b]$, then $f$ attains a maximum and a minimum value on $[a,b]$.
+\end{theorem}
+
+\begin{example}[Root finding via IVT]
+Show $f(x) = x^3 - x - 1$ has a root in $[1,2]$. Since $f$ is a polynomial it is continuous,
+$f(1) = -1 < 0$ and $f(2) = 5 > 0$. By IVT there exists $c \in (1,2)$ with $f(c) = 0$.
+\end{example}
+
+\begin{keybox}[Heuristic]
+``Continuous on a closed bounded interval'' is the hypothesis behind almost every existence
+theorem you will meet: IVT, EVT, Rolle, MVT. Lose either continuity or the closed bounded
+interval and the conclusions fail.
+\end{keybox}

@@ -1,0 +1,38 @@
+\section{Gradient and Directional Derivatives}
+
+\subsection{The gradient}
+For $f : \R^n \to \R$,
+\[ \grad f = \left\langle \frac{\partial f}{\partial x_1}, \ldots, \frac{\partial f}{\partial x_n} \right\rangle. \]
+
+\subsection{Directional derivative}
+The rate of change of $f$ at $\vc{x}_0$ in unit direction $\vc{u}$:
+\[ D_{\vc u} f(\vc x_0) = \lim_{h \to 0} \frac{f(\vc x_0 + h \vc u) - f(\vc x_0)}{h}
+= \grad f(\vc x_0) \dotp \vc u \qquad \text{($f$ differentiable)}. \]
+\textbf{$\vc u$ must be a unit vector.}
+
+\subsection{Geometric meaning}
+\begin{keybox}[The three properties of $\grad f$]
+\begin{enumerate}[leftmargin=*,nosep]
+  \item $\grad f(\vc x_0)$ points in the direction of \emph{steepest increase} of $f$ at $\vc x_0$.
+  \item $\lVert \grad f(\vc x_0) \rVert$ is the maximum value of $D_{\vc u} f(\vc x_0)$.
+  \item $\grad f(\vc x_0)$ is normal to the level set $\{ f = f(\vc x_0) \}$ at $\vc x_0$.
+\end{enumerate}
+\end{keybox}
+
+\begin{example}
+$f(x,y,z) = x^2 + y^2 - z$ at $(1,2,3)$: $\grad f = \langle 2x, 2y, -1 \rangle = \langle 2,4,-1\rangle$.
+Steepest ascent direction. The tangent plane to the level surface $f = 2$ at $(1,2,3)$ is
+$2(x-1) + 4(y-2) - (z-3) = 0$.
+\end{example}
+
+\subsection{Tangent plane to a level surface}
+If $F(x,y,z) = c$ and $\grad F(\vc x_0) \neq 0$, the tangent plane at $\vc x_0$ is
+\[ \grad F(\vc x_0) \dotp (\vc r - \vc x_0) = 0. \]
+
+\subsection{Gradient identities}
+\[
+\grad (f + g) = \grad f + \grad g, \quad
+\grad (f g) = f \grad g + g \grad f, \quad
+\grad (f/g) = \frac{g \grad f - f \grad g}{g^2}.
+\]
+For a composition $h(\vc x) = \varphi(f(\vc x))$: $\grad h = \varphi'(f) \grad f$.

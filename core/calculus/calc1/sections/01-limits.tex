@@ -1,0 +1,80 @@
+\section{Limits}
+
+\begin{definition}[$\eps$--$\delta$ limit]
+$\displaystyle \lim_{x \to a} f(x) = L$ means: for every $\eps > 0$ there exists $\delta > 0$
+such that
+\[ 0 < |x - a| < \delta \;\Longrightarrow\; |f(x) - L| < \eps. \]
+\end{definition}
+
+\begin{intuition}
+``$f(x)$ can be forced arbitrarily close to $L$ by taking $x$ sufficiently close to $a$, but
+$x \ne a$.'' The value $f(a)$ is irrelevant --- limits care about \emph{approach}, not arrival.
+\end{intuition}
+
+\subsection{Algebraic limit laws}
+If $\lim_{x\to a} f(x) = L$ and $\lim_{x\to a} g(x) = M$, then
+\[
+\begin{aligned}
+&\lim (f \pm g) = L \pm M, &&\lim (fg) = LM, \\
+&\lim \tfrac{f}{g} = \tfrac{L}{M}\ \ (M\neq 0), &&\lim (cf) = cL.
+\end{aligned}
+\]
+For composition: if $f$ is continuous at $M$ and $\lim_{x\to a} g(x) = M$, then
+$\lim_{x\to a} f(g(x)) = f(M)$.
+
+\subsection{One-sided and infinite limits}
+\begin{itemize}[leftmargin=*,nosep]
+  \item $\lim_{x\to a^-} f(x)$ and $\lim_{x\to a^+} f(x)$: approach from the left/right.
+  \item Two-sided limit exists $\iff$ both one-sided limits exist and are equal.
+  \item $\lim_{x\to a} f(x) = \infty$ means $f$ grows without bound (no real $L$ exists; this is a vertical asymptote).
+  \item $\lim_{x\to \infty} f(x) = L$ describes horizontal asymptotes.
+\end{itemize}
+
+\subsection{Standard limits worth memorizing}
+\begin{keybox}[Must-know limits]
+\[
+\lim_{x \to 0} \frac{\sin x}{x} = 1, \qquad
+\lim_{x \to 0} \frac{1 - \cos x}{x^2} = \tfrac{1}{2}, \qquad
+\lim_{x \to 0} \frac{e^x - 1}{x} = 1,
+\]
+\[
+\lim_{x \to 0} \frac{\ln(1+x)}{x} = 1, \quad
+\lim_{x \to \infty} \Bigl(1 + \tfrac{1}{x}\Bigr)^x = e, \quad
+\lim_{x \to \infty} \frac{\ln x}{x^p} = 0 \ (p>0).
+\]
+\end{keybox}
+
+\subsection{Squeeze theorem}
+\begin{theorem}[Squeeze]
+Suppose $g(x) \le f(x) \le h(x)$ on a punctured neighborhood of $a$. If
+\[ \lim_{x\to a} g(x) \;=\; \lim_{x\to a} h(x) \;=\; L, \]
+then $\lim_{x\to a} f(x) = L$.
+\end{theorem}
+
+\begin{example}
+$\displaystyle \lim_{x\to 0} x^2 \sin(1/x) = 0$, because $-x^2 \le x^2 \sin(1/x) \le x^2$
+and both bounds tend to $0$.
+\end{example}
+
+\subsection{Indeterminate forms and L'H\^opital}
+The forms $\tfrac{0}{0}$, $\tfrac{\infty}{\infty}$, $0 \cdot \infty$, $\infty - \infty$,
+$0^0$, $1^\infty$, $\infty^0$ are \emph{indeterminate}: the limit depends on \emph{how} the parts go to zero/infinity.
+
+\begin{theorem}[L'H\^opital's rule]
+If $\lim_{x\to a} \tfrac{f}{g}$ is of the form $\tfrac{0}{0}$ or $\tfrac{\infty}{\infty}$,
+$f, g$ are differentiable near $a$ (with $g'\neq 0$), and $\lim \tfrac{f'}{g'}$ exists, then
+\[ \lim_{x\to a} \frac{f(x)}{g(x)} = \lim_{x\to a} \frac{f'(x)}{g'(x)}. \]
+\end{theorem}
+
+\begin{example}
+$\displaystyle \lim_{x\to 0} \frac{\sin x - x}{x^3} \xrightarrow{\,\text{LH}\,} \lim_{x\to 0} \frac{\cos x - 1}{3x^2}
+\xrightarrow{\,\text{LH}\,} \lim_{x\to 0} \frac{-\sin x}{6x} = -\tfrac{1}{6}.$
+\end{example}
+
+\begin{pitfallbox}
+\begin{itemize}[leftmargin=*,nosep]
+  \item L'H\^opital only applies after verifying you have $\tfrac{0}{0}$ or $\tfrac{\infty}{\infty}$.
+  \item Cancel common factors first (e.g.\ $(x-1)$) --- often there is no need for L'H\^opital.
+  \item For $1^\infty$, $0^0$, $\infty^0$: take $\ln$, rewrite as $\tfrac{0}{0}$ or $\tfrac{\infty}{\infty}$, then apply L'H.
+\end{itemize}
+\end{pitfallbox}

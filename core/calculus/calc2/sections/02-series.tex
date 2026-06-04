@@ -1,0 +1,46 @@
+\section{Infinite Series}
+
+\begin{definition}[Series and partial sums]
+Given $\{a_n\}$, the $N$-th partial sum is $S_N = \sum_{n=1}^N a_n$. The series
+$\sum_{n=1}^\infty a_n$ \emph{converges to $S$} if $S_N \to S$; otherwise it diverges.
+\end{definition}
+
+\subsection{Two foundational series}
+
+\begin{keybox}[Geometric series]
+For $|r| < 1$,
+\[ \sum_{n=0}^\infty a r^n = \frac{a}{1 - r}. \]
+Diverges for $|r| \ge 1$. The $N$-th partial sum is
+$S_N = a \dfrac{1 - r^{N+1}}{1 - r}$.
+\end{keybox}
+
+\begin{keybox}[$p$-series]
+\[ \sum_{n=1}^\infty \frac{1}{n^p} \;\text{converges}\;\iff\; p > 1. \]
+In particular the harmonic series $\sum 1/n$ diverges; $\sum 1/n^2 = \pi^2/6$ converges.
+\end{keybox}
+
+\subsection{Telescoping series}
+If $a_n = b_n - b_{n+1}$, then $S_N = b_1 - b_{N+1}$ and the series converges iff $b_n$ converges.
+
+\begin{example}
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n(n+1)} = \sum \!\Bigl(\tfrac{1}{n} - \tfrac{1}{n+1}\Bigr) = 1.$
+\end{example}
+
+\subsection{Algebraic properties}
+If $\sum a_n = A$ and $\sum b_n = B$ converge, then for any constants $\alpha, \beta$
+\[ \sum (\alpha a_n + \beta b_n) = \alpha A + \beta B. \]
+Convergence of $\sum a_n$ is unaffected by changing finitely many terms (the value changes,
+not the convergence).
+
+\subsection{Divergence test (the easy ``no'')}
+\begin{theorem}[$n$-th term test]
+If $\sum a_n$ converges, then $a_n \to 0$.
+\end{theorem}
+
+\noindent Contrapositive (what you actually use): if $a_n \not\to 0$, then $\sum a_n$ diverges.
+This is the first thing to check on any series.
+
+\begin{pitfallbox}
+``$a_n \to 0$'' does \emph{not} imply convergence. The harmonic series $\sum 1/n$ satisfies
+$1/n \to 0$ yet diverges. The $n$-th term test is one-directional.
+\end{pitfallbox}

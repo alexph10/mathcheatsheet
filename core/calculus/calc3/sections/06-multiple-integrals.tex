@@ -1,0 +1,56 @@
+\section{Multiple Integrals}
+
+\subsection{Double integral over a rectangle}
+For $f$ continuous on $R = [a,b]\times[c,d]$, by Fubini's theorem,
+\[ \iint_R f \dA = \int_a^b \!\!\int_c^d f(x,y) \dy \dx = \int_c^d \!\!\int_a^b f(x,y) \dx \dy. \]
+
+\subsection{Double integral over a general region}
+\textbf{Type I} (vertically simple): $a \le x \le b$, $g_1(x) \le y \le g_2(x)$:
+\[ \iint_D f \dA = \int_a^b \!\int_{g_1(x)}^{g_2(x)} f(x,y) \dy \dx. \]
+\textbf{Type II} (horizontally simple): $c \le y \le d$, $h_1(y) \le x \le h_2(y)$.
+
+\begin{keybox}[Recipe]
+\begin{enumerate}[leftmargin=*,nosep]
+  \item Draw the region $D$.
+  \item Decide outer / inner variable (which axis spans the constant interval).
+  \item Express the inner bounds in terms of the outer variable.
+  \item If a Type I setup is hard, swap the order.
+\end{enumerate}
+\end{keybox}
+
+\subsection{Polar coordinates}
+$x = r\cos\theta$, $y = r\sin\theta$, $\dA = r \dr \dth$.
+\[ \iint_D f(x,y) \dA = \iint_{D'} f(r\cos\theta, r\sin\theta) \, r \dr \dth. \]
+
+\subsection{Triple integrals (Cartesian)}
+For a continuous $f$ on a solid $E$ described as
+$a \le x \le b$, $g_1(x) \le y \le g_2(x)$, $h_1(x,y) \le z \le h_2(x,y)$:
+\[ \iiint_E f \dV = \int_a^b \!\int_{g_1(x)}^{g_2(x)} \!\int_{h_1(x,y)}^{h_2(x,y)} f \dz \dy \dx. \]
+
+\subsection{Cylindrical coordinates}
+$x = r\cos\theta$, $y = r\sin\theta$, $z = z$, $\dV = r \dr \dth \dz$.
+Good for solids with cylindrical / paraboloidal symmetry.
+
+\subsection{Spherical coordinates}
+$x = \rho \sin\varphi \cos\theta$, $y = \rho \sin\varphi \sin\theta$, $z = \rho \cos\varphi$, with $\rho \ge 0$, $0 \le \varphi \le \pi$, $0 \le \theta < 2\pi$. Volume element:
+\[ \dV = \rho^2 \sin\varphi \drho \dphi \dth. \]
+Use for spheres, cones, and integrands that simplify under $x^2+y^2+z^2 = \rho^2$.
+
+\subsection{Change of variables (Jacobian)}
+For a $C^1$ bijection $\vc T : (u,v) \mapsto (x,y)$,
+\[ \iint_D f(x,y) \dx \dy = \iint_{D'} f(x(u,v), y(u,v)) \, \bigl| J \bigr| \du \dv, \quad
+J = \det \begin{pmatrix} x_u & x_v \\ y_u & y_v \end{pmatrix}. \]
+The polar/cylindrical/spherical formulas are special cases ($|J| = r$, $r$, $\rho^2 \sin\varphi$).
+
+\subsection{Applications}
+\begin{itemize}[leftmargin=*,nosep]
+  \item \textbf{Area:} $A(D) = \iint_D 1 \dA$. \quad \textbf{Volume:} $V(E) = \iiint_E 1 \dV$.
+  \item \textbf{Mass:} $m = \iint \rho(x,y) \dA$ for a lamina of density $\rho$.
+  \item \textbf{Center of mass:} $\bar x = \tfrac{1}{m}\iint x \rho \dA$, etc.
+  \item \textbf{Average value:} $\bar f = \tfrac{1}{|D|} \iint_D f \dA$.
+\end{itemize}
+
+\begin{example}[Volume by spherical]
+Unit ball: $V = \int_0^{2\pi}\!\int_0^{\pi}\!\int_0^1 \rho^2 \sin\varphi \drho \dphi \dth
+= 2\pi \cdot 2 \cdot \tfrac{1}{3} = \tfrac{4\pi}{3}$.
+\end{example}

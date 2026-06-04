@@ -1,0 +1,56 @@
+\section{Extrema in Several Variables}
+
+\subsection{Critical points}
+$\vc x_0$ is a \emph{critical point} of $f$ if $\grad f(\vc x_0) = \vc 0$ or some partial does
+not exist. Local extrema of a differentiable function occur only at critical points.
+
+\subsection{Second derivative test (two variables)}
+At a critical point $(a,b)$ of $f(x,y)$, with continuous second partials, let
+\[ H = \det \begin{pmatrix} f_{xx} & f_{xy} \\ f_{xy} & f_{yy} \end{pmatrix}_{(a,b)}
+= f_{xx} f_{yy} - f_{xy}^2. \]
+\begin{itemize}[leftmargin=*,nosep]
+  \item $H > 0$ and $f_{xx} > 0$: local \textbf{minimum}.
+  \item $H > 0$ and $f_{xx} < 0$: local \textbf{maximum}.
+  \item $H < 0$: \textbf{saddle point}.
+  \item $H = 0$: inconclusive.
+\end{itemize}
+
+\begin{example}
+$f(x,y) = x^3 - 3xy + y^3$. $\grad f = (3x^2 - 3y, -3x + 3y^2) = 0$ at $(0,0)$ and $(1,1)$.
+$f_{xx} = 6x$, $f_{yy} = 6y$, $f_{xy} = -3$, so $H = 36xy - 9$.
+At $(0,0)$: $H = -9 < 0$, saddle. At $(1,1)$: $H = 27 > 0$ and $f_{xx} = 6 > 0$, local minimum.
+\end{example}
+
+\subsection{Absolute extrema on a closed bounded region}
+\begin{enumerate}[leftmargin=*,nosep]
+  \item Find critical points in the interior.
+  \item Find extrema on the boundary (parametrize the boundary or use Lagrange).
+  \item Evaluate $f$ at all candidates; the largest/smallest are absolute extrema.
+\end{enumerate}
+
+\subsection{Lagrange multipliers}
+To extremize $f(\vc x)$ subject to $g(\vc x) = c$ (with $\grad g \neq 0$):
+\[ \grad f = \lambda \grad g, \qquad g(\vc x) = c. \]
+Solve the system for $\vc x$ and the multiplier $\lambda$.
+
+\noindent\textbf{Multiple constraints} $g_1 = c_1, \ldots, g_k = c_k$:
+$\grad f = \sum_{i=1}^k \lambda_i \grad g_i$.
+
+\begin{example}
+Maximize $f(x,y) = xy$ subject to $x^2 + y^2 = 1$.
+$\grad f = (y, x)$, $\grad g = (2x, 2y)$, so $y = 2 \lambda x$, $x = 2 \lambda y$. Combined with
+$x^2 + y^2 = 1$: $x = \pm y = \pm 1/\sqrt 2$. Maximum value $1/2$ at $(\tfrac{1}{\sqrt 2}, \tfrac{1}{\sqrt 2})$.
+\end{example}
+
+\begin{intuition}
+At an extremum on the constraint surface, the level set of $f$ is tangent to the constraint
+surface; their normals $\grad f$ and $\grad g$ must be parallel.
+\end{intuition}
+
+\begin{pitfallbox}
+\begin{itemize}[leftmargin=*,nosep]
+  \item Lagrange gives \emph{candidates}; compare values to identify the actual max/min.
+  \item Check the regularity condition $\grad g \neq 0$ on the constraint set;
+        violations require separate consideration.
+\end{itemize}
+\end{pitfallbox}

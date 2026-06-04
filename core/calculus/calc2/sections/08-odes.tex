@@ -1,0 +1,57 @@
+\section{First-Order ODEs}
+
+A first-order ODE has the form $y' = F(x, y)$. The general solution contains one arbitrary
+constant; an initial condition $y(x_0) = y_0$ selects a particular solution.
+
+\subsection{Separable equations}
+$\dfrac{dy}{dx} = g(x) h(y) \;\Rightarrow\; \displaystyle\int \frac{\dy}{h(y)} = \int g(x) \dx + C.$
+
+\begin{example}[Exponential growth/decay]
+$\dfrac{dy}{dx} = ky \;\Rightarrow\; y = C e^{kx}$.
+\end{example}
+
+\subsection{First-order linear: integrating factor}
+\[ y' + P(x) y = Q(x). \]
+Let $\mu(x) = \exp\!\left(\int P(x) \dx\right)$. Multiplying through gives $(\mu y)' = \mu Q$, so
+\[ y(x) = \frac{1}{\mu(x)} \!\left( \int \mu(x) Q(x) \dx + C \right). \]
+
+\begin{example}
+$y' + 2x y = x \;\Rightarrow\; \mu = e^{x^2} \;\Rightarrow\; (e^{x^2} y)' = x e^{x^2}
+\;\Rightarrow\; y = \tfrac{1}{2} + C e^{-x^2}.$
+\end{example}
+
+\subsection{Exact equations}
+$M(x,y) \dx + N(x,y) \dy = 0$ is \emph{exact} iff $\partial_y M = \partial_x N$ on a simply
+connected region. Then there is $F(x,y)$ with $\partial_x F = M$ and $\partial_y F = N$;
+solutions are $F(x,y) = C$.
+
+\subsection{Direction fields, equilibria, and stability}
+For $y' = f(y)$ (autonomous):
+\begin{itemize}[leftmargin=*,nosep]
+  \item Equilibria: zeros of $f$.
+  \item An equilibrium $y_*$ is asymptotically stable if $f'(y_*) < 0$, unstable if $f'(y_*) > 0$.
+\end{itemize}
+
+\subsection{Numerical: Euler's method}
+For $y' = f(x, y)$, $y(x_0) = y_0$, and step $h$:
+\[ x_{n+1} = x_n + h, \qquad y_{n+1} = y_n + h \, f(x_n, y_n). \]
+Local truncation error $O(h^2)$, global error $O(h)$. Improved Euler and Runge--Kutta methods
+trade compute for higher order.
+
+\subsection{Modeling cheatsheet}
+\begin{keybox}[Recipes]
+\begin{itemize}[leftmargin=*,nosep]
+  \item \textbf{Exponential growth/decay:} $y' = ky$, $y = y_0 e^{kt}$.
+  \item \textbf{Logistic:} $y' = ky(1 - y/M)$, $y = \dfrac{M}{1 + A e^{-kt}}$.
+  \item \textbf{Newton's law of cooling:} $T' = -k(T - T_\infty)$, $T = T_\infty + (T_0 - T_\infty) e^{-kt}$.
+  \item \textbf{Mixing tank with constant flow:} $V' = \text{rate in} - \text{rate out}$ leads to a linear ODE in concentration.
+\end{itemize}
+\end{keybox}
+
+\begin{pitfallbox}
+\begin{itemize}[leftmargin=*,nosep]
+  \item Separating variables tacitly assumes $h(y) \neq 0$; equilibria $h(y_*) = 0$ are extra
+        solutions you must add by hand.
+  \item For linear ODEs the $+C$ on $\int P \dx$ disappears into $\mu$ (any antiderivative works).
+\end{itemize}
+\end{pitfallbox}

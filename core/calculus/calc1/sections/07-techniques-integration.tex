@@ -1,0 +1,86 @@
+\section{Techniques of Integration}
+
+\subsection{$u$-substitution}
+If $u = g(x)$ and $\du = g'(x) \dx$, then
+\[ \int f(g(x)) g'(x) \dx = \int f(u) \du. \]
+
+\begin{example}
+$\displaystyle \int 2x \cos(x^2) \dx$: let $u = x^2$, $\du = 2x \dx$, so the integral is
+$\int \cos u \du = \sin(x^2) + C$.
+\end{example}
+
+For definite integrals, change the limits as well:
+\[ \int_a^b f(g(x)) g'(x) \dx = \int_{g(a)}^{g(b)} f(u) \du. \]
+
+\subsection{Integration by parts}
+From the product rule:
+\[ \int u \, dv = u v - \int v \, du. \]
+
+\textbf{LIATE} heuristic for picking $u$ (in priority order):
+\textbf{L}og, \textbf{I}nverse-trig, \textbf{A}lgebraic, \textbf{T}rig, \textbf{E}xponential.
+
+\begin{example}
+$\displaystyle \int x e^x \dx$: $u = x$, $dv = e^x \dx$ $\Rightarrow$ $du = \dx$, $v = e^x$.
+\[ \int x e^x \dx = x e^x - \int e^x \dx = (x - 1) e^x + C. \]
+\end{example}
+
+\begin{example}[Tabular for repeated parts]
+$\int x^2 \sin x \dx = -x^2 \cos x + 2x \sin x + 2\cos x + C$
+(differentiate $x^2$ thrice, integrate $\sin x$ thrice, alternate signs).
+\end{example}
+
+\subsection{Trigonometric integrals}
+\textbf{Powers of $\sin, \cos$:}
+\begin{itemize}[leftmargin=*,nosep]
+  \item Odd power of $\sin$ or $\cos$: peel off one factor, convert the rest using $\sin^2 + \cos^2 = 1$, substitute.
+  \item All even: use $\sin^2 x = \tfrac{1 - \cos 2x}{2}$, $\cos^2 x = \tfrac{1 + \cos 2x}{2}$.
+\end{itemize}
+
+\textbf{Powers of $\sec, \tan$:} use $\sec^2 = 1 + \tan^2$ and the derivative pair
+$(\sec x)' = \sec x \tan x$, $(\tan x)' = \sec^2 x$.
+
+\subsection{Trigonometric substitution}
+\[
+\renewcommand{\arraystretch}{1.3}
+\begin{array}{l|l|l}
+\text{Integrand contains} & \text{Substitute} & \text{Identity} \\\hline
+\sqrt{a^2 - x^2} & x = a \sin \theta & 1 - \sin^2 = \cos^2 \\
+\sqrt{a^2 + x^2} & x = a \tan \theta & 1 + \tan^2 = \sec^2 \\
+\sqrt{x^2 - a^2} & x = a \sec \theta & \sec^2 - 1 = \tan^2
+\end{array}
+\]
+
+\subsection{Partial fractions}
+For a proper rational function $P(x)/Q(x)$ (degree of $P$ $<$ degree of $Q$),
+factor $Q$ over $\R$ into linear and irreducible-quadratic factors and decompose:
+\[ \frac{P(x)}{(x-a)^k (x^2 + bx + c)^m} = \sum_{i=1}^k \frac{A_i}{(x-a)^i} + \sum_{j=1}^m \frac{B_j x + C_j}{(x^2 + bx + c)^j}. \]
+Integrate term by term using $\ln|x-a|$ for linear and $\arctan$ / $\ln(x^2 + bx + c)$
+for quadratic pieces.
+
+\begin{example}
+$\displaystyle \int \frac{1}{x^2 - 1} \dx = \tfrac{1}{2} \int \!\Bigl(\tfrac{1}{x-1} - \tfrac{1}{x+1}\Bigr)\dx
+= \tfrac{1}{2} \ln\!\left|\tfrac{x-1}{x+1}\right| + C.$
+\end{example}
+
+\subsection{Improper integrals}
+\begin{itemize}[leftmargin=*,nosep]
+  \item Infinite limits: $\displaystyle \int_a^\infty f \dx = \lim_{b\to\infty} \int_a^b f \dx$.
+  \item Unbounded integrand at $c \in [a,b]$: split at $c$ and take one-sided limits.
+  \item Converges if the limit is finite; otherwise diverges.
+\end{itemize}
+
+\begin{keybox}[$p$-test (the workhorse)]
+\[
+\int_1^\infty \frac{\dx}{x^p}\ \text{converges} \iff p > 1, \qquad
+\int_0^1 \frac{\dx}{x^p}\ \text{converges} \iff p < 1.
+\]
+\end{keybox}
+
+\begin{pitfallbox}
+\begin{itemize}[leftmargin=*,nosep]
+  \item Forgetting the $+C$ on indefinite integrals.
+  \item In $u$-substitution: not converting the limits, or not back-substituting in the indefinite case.
+  \item Trig substitution: forgetting to undo the substitution (write the answer in terms of $x$, not $\theta$).
+  \item Partial fractions: degree of numerator must be \emph{less than} denominator --- do polynomial long division first if not.
+\end{itemize}
+\end{pitfallbox}

@@ -1,0 +1,51 @@
+\section{Vector Fields and Line Integrals}
+
+\subsection{Vector fields}
+A vector field on $\R^n$ is a map $\F : \R^n \to \R^n$, $\F(\vc x) = \langle P, Q, R \rangle$
+(in $\R^3$).
+
+\subsection{Divergence and curl}
+\[
+\divg \F = \grad \dotp \F = P_x + Q_y + R_z, \qquad
+\curl \F = \grad \times \F =
+\det\!\begin{pmatrix} \ii & \jj & \kk \\ \partial_x & \partial_y & \partial_z \\ P & Q & R \end{pmatrix}.
+\]
+Identities: $\divg(\curl \F) = 0$ and $\curl(\grad f) = \vc 0$ (for $C^2$ fields).
+
+\subsection{Line integrals of scalar fields}
+For a smooth curve $C$ parametrized by $\rr(t)$, $t \in [a,b]$:
+\[ \int_C f \, ds = \int_a^b f(\rr(t)) \lVert \rr'(t) \rVert \dt. \]
+Independent of orientation; measures ``mass'' of $C$ with linear density $f$.
+
+\subsection{Line integrals of vector fields (work)}
+\[ \int_C \F \dotp d\rr = \int_a^b \F(\rr(t)) \dotp \rr'(t) \dt. \]
+Equivalently, $\int_C P \dx + Q \dy + R \dz$. Reversing orientation flips the sign.
+
+\subsection{Conservative fields}
+$\F$ is \emph{conservative} if $\F = \grad f$ for some scalar potential $f$.
+
+\begin{theorem}[Fundamental Theorem for Line Integrals]
+If $\F = \grad f$ is continuous on a curve $C$ from $A$ to $B$, then
+\[ \int_C \F \dotp d\rr = f(B) - f(A). \]
+In particular the integral is path-independent and zero around any closed loop.
+\end{theorem}
+
+\subsection{Test for conservativeness}
+On a simply connected domain, $\F = \langle P, Q, R \rangle$ (sufficiently smooth) is conservative iff $\curl \F = \vc 0$, equivalently
+\[ P_y = Q_x, \quad P_z = R_x, \quad Q_z = R_y. \]
+In 2D, the test is just $P_y = Q_x$.
+
+\subsection{Finding a potential}
+Integrate $f_x = P$ with respect to $x$; the constant of integration is a function $g(y, z)$.
+Then use $f_y = Q$ and $f_z = R$ to pin down $g$.
+
+\begin{example}
+$\F = \langle 2xy + z^3, x^2, 3x z^2 \rangle$. Check: $P_y = 2x = Q_x$, $P_z = 3z^2 = R_x$, $Q_z = 0 = R_y$.
+Conservative. Integrate $P$: $f = x^2 y + x z^3 + g(y,z)$. Then $f_y = x^2 + g_y = x^2 \Rightarrow g_y = 0$.
+$f_z = 3x z^2 + g_z = 3xz^2 \Rightarrow g_z = 0$. So $f(x,y,z) = x^2 y + x z^3 + C$.
+\end{example}
+
+\begin{pitfallbox}
+The curl test requires a \emph{simply connected} domain. On a region with holes (e.g.\ $\R^2 \setminus \{0\}$), $\curl \F = 0$ does not imply $\F$ is conservative --- canonical
+example: $\F = \langle -y, x \rangle / (x^2 + y^2)$.
+\end{pitfallbox}
