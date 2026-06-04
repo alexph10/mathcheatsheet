@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 3}{Partial Derivatives}{A}
+\begin{problems}
+\item For $f(x,y) = x^3 y^2 + \sin(xy)$, find $f_x$ and $f_y$.
+\item Compute $f_{xy}$ and $f_{yx}$ for $f(x,y) = e^{x y} + x^2 y$ and verify Clairaut's theorem.
+\item Show that $\displaystyle \lim_{(x,y) \to (0,0)} \dfrac{x^2 y}{x^4 + y^2}$ does not exist (try $y = x^2$).
+\item Find the tangent plane to $z = x^2 + y^2$ at $(1, 2, 5)$.
+\item Use the chain rule: $z = x^2 + y^2$, $x = \cos t$, $y = \sin t$. Compute $dz/dt$.
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 3}{Partial Derivatives}{B}
+\begin{problems}
+\item For $f(x,y,z) = x y z + z^2 e^x$, compute all three first partials.
+\item For $z = \ln(x^2 + y^2)$, verify Laplace's equation $z_{xx} + z_{yy} = 0$.
+\item Determine whether $\displaystyle \lim_{(x,y)\to(0,0)} \dfrac{x^2 + y^2}{|x| + |y|}$ exists.
+\item Find the tangent plane to the surface $x^2 + y^2 + z^2 = 14$ at $(1, 2, 3)$.
+\item Use implicit differentiation on $F(x,y,z) = x^2 + 2y^2 + 3z^2 - 6 = 0$ to find $\partial z/\partial x$ at $(1,1,1)$.
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 3}{Partial Derivatives}
+
+\begin{answers}{A}
+\item $f_x = \boxed{3x^2 y^2 + y \cos(xy)}$, $f_y = \boxed{2 x^3 y + x \cos(xy)}$.
+\item $f_x = y e^{xy} + 2xy$, $f_{xy} = e^{xy} + xy e^{xy} + 2x$. $f_y = x e^{xy} + x^2$, $f_{yx} = e^{xy} + xy e^{xy} + 2x$. Equal. \checkmark
+\item Along $y = m x$: $\tfrac{x^2 \cdot mx}{x^4 + m^2 x^2} = \tfrac{mx^3}{x^4 + m^2 x^2} \to 0$. Along $y = x^2$: $\tfrac{x^2 \cdot x^2}{x^4 + x^4} = \tfrac{1}{2}$. Different limits $\Rightarrow$ does not exist.
+\item $f_x = 2x$, $f_y = 2y$. At $(1,2)$: gradient $(2,4)$. Plane: $z - 5 = 2(x-1) + 4(y-2) \Rightarrow \boxed{z = 2x + 4y - 5}$.
+\item $\tfrac{dz}{dt} = 2x \cdot (-\sin t) + 2y \cdot \cos t = -2\sin t \cos t + 2\sin t \cos t = \boxed{0}$ (consistent with $z = 1$ constant).
+\end{answers}
+
+\begin{answers}{B}
+\item $f_x = \boxed{yz + z^2 e^x}$, $f_y = \boxed{xz}$, $f_z = \boxed{xy + 2z e^x}$.
+\item $z_x = \tfrac{2x}{x^2+y^2}$, $z_{xx} = \tfrac{2(x^2+y^2) - 2x \cdot 2x}{(x^2+y^2)^2} = \tfrac{2(y^2-x^2)}{(x^2+y^2)^2}$. By symmetry $z_{yy} = \tfrac{2(x^2 - y^2)}{(x^2+y^2)^2}$. Sum $= 0$. \checkmark
+\item Along $y = 0$: $\tfrac{x^2}{|x|} = |x| \to 0$. Along $y = x$: $\tfrac{2x^2}{2|x|} = |x| \to 0$. In fact $\tfrac{x^2 + y^2}{|x|+|y|} \le |x|+|y| \to 0$ (since $x^2 + y^2 \le (|x|+|y|)^2$). \textbf{Limit $= 0$.}
+\item $\grad F = \langle 2x, 2y, 2z\rangle$. At $(1,2,3)$: $\langle 2, 4, 6\rangle$. Plane: $\boxed{2(x-1) + 4(y-2) + 6(z-3) = 0}$ i.e.\ $x + 2y + 3z = 14$.
+\item $\tfrac{\partial z}{\partial x} = -\tfrac{F_x}{F_z} = -\tfrac{2x}{6z}$. At $(1,1,1)$: $\boxed{-1/3}$.
+\end{answers}
+
+\end{document}

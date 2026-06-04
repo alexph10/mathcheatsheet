@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 2}{Parametric Curves}{A}
+\begin{problems}
+\item Find $\dfrac{dy}{dx}$ at $t = 1$ for $x = t^2$, $y = t^3$.
+\item Eliminate the parameter in $x = 2\cos t$, $y = 3\sin t$, $t \in [0, 2\pi]$.
+\item Find the arc length of $x = t$, $y = t^{3/2}$ on $[0, 4]$.
+\item Find $\dfrac{d^2 y}{dx^2}$ at $t = 1$ for $x = t^2$, $y = t^3$.
+\item Find the area enclosed by the ellipse $x = a \cos t$, $y = b \sin t$ using a parametric area formula.
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 2}{Parametric Curves}{B}
+\begin{problems}
+\item Find $\dfrac{dy}{dx}$ at $t = \pi/4$ for $x = \cos t$, $y = \sin 2t$.
+\item Eliminate the parameter in $x = e^t$, $y = e^{2t}$.
+\item Find the arc length of $x = \cos t$, $y = \sin t$ on $[0, \pi/2]$.
+\item Find the surface area when $x = t$, $y = t^2$, $t \in [0, 1]$ is rotated about the $x$-axis.
+\item Find the area under the cycloid $x = r(t - \sin t)$, $y = r(1 - \cos t)$ for $t \in [0, 2\pi]$.
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 2}{Parametric Curves}
+
+\begin{answers}{A}
+\item $\tfrac{dy}{dx} = \tfrac{y'(t)}{x'(t)} = \tfrac{3t^2}{2t} = \tfrac{3t}{2}$, at $t=1$: $\boxed{3/2}$.
+\item $\tfrac{x^2}{4} + \tfrac{y^2}{9} = \cos^2 t + \sin^2 t = 1$. Ellipse, semi-axes $2$ and $3$.
+\item $x' = 1$, $y' = \tfrac{3}{2}\sqrt t$. $L = \int_0^4 \sqrt{1 + \tfrac{9t}{4}} \dt$. Let $u = 1 + 9t/4$, $du = 9/4 \dt$. $L = \tfrac{4}{9} \int_1^{10} \sqrt u \du = \tfrac{4}{9} \cdot \tfrac{2}{3} (10^{3/2} - 1) = \boxed{\tfrac{8}{27}(10\sqrt{10} - 1)}$.
+\item $\tfrac{dy}{dx} = \tfrac{3t}{2}$. $\dfrac{d^2 y}{dx^2} = \tfrac{1}{x'(t)} \cdot \tfrac{d}{dt}\!\bigl(\tfrac{3t}{2}\bigr) = \tfrac{1}{2t} \cdot \tfrac{3}{2} = \tfrac{3}{4t}$. At $t=1$: $\boxed{3/4}$.
+\item Use $A = \oint y \dx = \int_0^{2\pi} b \sin t \cdot (-a \sin t) \dt = -ab \int_0^{2\pi} \sin^2 t \dt = -ab \pi$. The enclosed area is $|A| = \boxed{\pi a b}$.
+\end{answers}
+
+\begin{answers}{B}
+\item $\tfrac{dy}{dx} = \tfrac{2\cos 2t}{-\sin t}$, at $t=\pi/4$: $\tfrac{2\cos(\pi/2)}{-\sin(\pi/4)} = \tfrac{0}{-\sqrt 2 /2} = \boxed{0}$.
+\item $y = x^2$ for $x > 0$. \textbf{Parabola} (right half).
+\item $L = \int_0^{\pi/2} \sqrt{\sin^2 t + \cos^2 t} \dt = \int_0^{\pi/2} 1 \dt = \boxed{\pi/2}$ (quarter unit circle).
+\item $S = 2\pi \int_0^1 y \sqrt{(x')^2 + (y')^2} \dt = 2\pi \int_0^1 t^2 \sqrt{1 + 4t^2} \dt$. Let $u = 1 + 4t^2$, $du = 8t \dt$; trig sub or numerical. (Closed form messy.)
+\item $A = \int_0^{2\pi} y(t) x'(t) \dt = \int_0^{2\pi} r(1 - \cos t) \cdot r(1 - \cos t) \dt = r^2 \int_0^{2\pi} (1 - \cos t)^2 \dt = r^2 \cdot 3\pi = \boxed{3\pi r^2}$.
+\end{answers}
+
+\end{document}

@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 1}{Limits}{A}
+\begin{problems}
+\item Evaluate $\displaystyle \lim_{x\to 3} \frac{x^2 - 9}{x - 3}$.
+\item Evaluate $\displaystyle \lim_{x\to 0} \frac{\sin(5x)}{x}$.
+\item Evaluate $\displaystyle \lim_{x\to \infty} \frac{3x^2 - x + 4}{2x^2 + 7}$.
+\item Use the squeeze theorem to find $\displaystyle \lim_{x\to 0} x^2 \cos(1/x)$.
+\item Use L'H\^opital to evaluate $\displaystyle \lim_{x\to 0} \frac{e^x - 1 - x}{x^2}$.
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 1}{Limits}{B}
+\begin{problems}
+\item Evaluate $\displaystyle \lim_{x\to 2} \frac{x^2 - 4}{x^2 - 5x + 6}$.
+\item Evaluate $\displaystyle \lim_{x\to 0} \frac{\tan(3x)}{\sin(2x)}$.
+\item Evaluate $\displaystyle \lim_{x\to \infty} \bigl(\sqrt{x^2 + x} - x\bigr)$.
+\item Determine $\displaystyle \lim_{x\to 0^{+}} x \ln x$ (rewrite, then L'H\^opital).
+\item Evaluate $\displaystyle \lim_{x\to \infty} \Bigl(1 + \tfrac{2}{x}\Bigr)^x$.
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 1}{Limits}
+
+\begin{answers}{A}
+\item Factor: $\tfrac{(x-3)(x+3)}{x-3} = x+3 \to \boxed{6}$.
+\item $\tfrac{\sin 5x}{x} = 5 \cdot \tfrac{\sin 5x}{5x} \to 5 \cdot 1 = \boxed{5}$.
+\item Divide top/bottom by $x^2$: $\tfrac{3 - 1/x + 4/x^2}{2 + 7/x^2} \to \boxed{3/2}$.
+\item Since $-x^2 \le x^2 \cos(1/x) \le x^2$ and both bounds $\to 0$, limit $= \boxed{0}$.
+\item Form $0/0$. LH: $\tfrac{e^x - 1}{2x}$, still $0/0$. LH again: $\tfrac{e^x}{2} \to \boxed{1/2}$.
+\end{answers}
+
+\begin{answers}{B}
+\item Factor: $\tfrac{(x-2)(x+2)}{(x-2)(x-3)} = \tfrac{x+2}{x-3} \to \tfrac{4}{-1} = \boxed{-4}$.
+\item As $x\to 0$, $\tan 3x \sim 3x$ and $\sin 2x \sim 2x$, so ratio $\to \boxed{3/2}$.
+\item Rationalize: $\tfrac{(\sqrt{x^2+x}-x)(\sqrt{x^2+x}+x)}{\sqrt{x^2+x}+x} = \tfrac{x}{\sqrt{x^2+x}+x} \to \tfrac{1}{1+1} = \boxed{1/2}$.
+\item Rewrite as $\tfrac{\ln x}{1/x}$ (form $-\infty/\infty$). LH: $\tfrac{1/x}{-1/x^2} = -x \to \boxed{0}$.
+\item $\ln L = \lim x \ln(1 + 2/x) = \lim x \cdot \tfrac{2}{x} = 2$, so $L = \boxed{e^2}$.
+\end{answers}
+
+\end{document}

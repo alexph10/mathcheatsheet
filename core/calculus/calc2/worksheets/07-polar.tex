@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 2}{Polar Coordinates}{A}
+\begin{problems}
+\item Convert $(2, \pi/3)$ to Cartesian coordinates.
+\item Convert $(x, y) = (-1, 1)$ to polar coordinates (with $r > 0$, $0 \le \theta < 2\pi$).
+\item Find the area enclosed by the circle $r = 2 \sin\theta$.
+\item Find the area enclosed by one petal of the rose $r = \cos(3\theta)$.
+\item Find the arc length of $r = \theta$, $\theta \in [0, 1]$.
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 2}{Polar Coordinates}{B}
+\begin{problems}
+\item Convert $(\sqrt 3, -1)$ to polar coordinates.
+\item Identify the curve $r = 4 \cos\theta$ in Cartesian form.
+\item Find the area inside the cardioid $r = 1 + \sin\theta$.
+\item Find the area inside both $r = 1$ and $r = 2 \sin\theta$ (intersection region).
+\item Find the slope of the curve $r = 1 + \cos\theta$ at $\theta = \pi/2$.
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 2}{Polar Coordinates}
+
+\begin{answers}{A}
+\item $x = 2 \cos(\pi/3) = 1$, $y = 2 \sin(\pi/3) = \sqrt 3$. $\boxed{(1, \sqrt 3)}$.
+\item $r = \sqrt 2$, $\theta = 3\pi/4$ (second quadrant). $\boxed{(\sqrt 2, 3\pi/4)}$.
+\item $r = 2\sin\theta$ is a circle of radius $1$ centered at $(0,1)$. Area $= \pi(1)^2 = \boxed{\pi}$. (Verify: $A = \tfrac{1}{2}\!\int_0^\pi 4\sin^2\theta \dth = 2 \int_0^\pi \tfrac{1 - \cos 2\theta}{2} \dth = \pi$.)
+\item One petal sweeps $\theta \in [-\pi/6, \pi/6]$. $A = \tfrac{1}{2}\!\int_{-\pi/6}^{\pi/6} \cos^2(3\theta) \dth = \tfrac{1}{2} \cdot \tfrac{1}{2}\!\int (1 + \cos 6\theta)\dth = \tfrac{1}{4}\!\bigl[\theta + \tfrac{\sin 6\theta}{6}\bigr]_{-\pi/6}^{\pi/6} = \boxed{\pi/12}$.
+\item $L = \int_0^1 \sqrt{\theta^2 + 1} \dth = \tfrac{1}{2}\bigl[\theta\sqrt{\theta^2+1} + \sinh^{-1}\theta\bigr]_0^1 = \boxed{\tfrac{1}{2}\bigl(\sqrt 2 + \ln(1 + \sqrt 2)\bigr)}$.
+\end{answers}
+
+\begin{answers}{B}
+\item $r = \sqrt{3 + 1} = 2$. $\theta = \arctan(-1/\sqrt 3) = -\pi/6$ (fourth quadrant). $\boxed{(2, -\pi/6)}$ or $(2, 11\pi/6)$.
+\item Multiply by $r$: $r^2 = 4 r\cos\theta \Rightarrow x^2 + y^2 = 4x \Rightarrow \boxed{(x-2)^2 + y^2 = 4}$. Circle of radius $2$ centered at $(2,0)$.
+\item $A = \tfrac{1}{2}\!\int_0^{2\pi}(1 + \sin\theta)^2 \dth = \tfrac{1}{2}\!\int_0^{2\pi}(1 + 2\sin\theta + \sin^2\theta)\dth = \tfrac{1}{2}(2\pi + 0 + \pi) = \boxed{3\pi/2}$.
+\item Intersect: $2\sin\theta = 1 \Rightarrow \theta = \pi/6, 5\pi/6$. Region inside both: below $r=1$ on $[\pi/6, 5\pi/6]$ and below $r=2\sin\theta$ on $[0,\pi/6]\cup[5\pi/6,\pi]$.
+$A = 2\!\left[\tfrac{1}{2}\!\int_0^{\pi/6}(2\sin\theta)^2\dth + \tfrac{1}{2}\!\int_{\pi/6}^{\pi/2} 1 \dth\right]
+= \int_0^{\pi/6} 4\sin^2\theta\dth + \int_{\pi/6}^{\pi/2}\dth = \bigl[2\theta - \sin 2\theta\bigr]_0^{\pi/6} + \tfrac{\pi}{3} = \boxed{\tfrac{2\pi}{3} - \tfrac{\sqrt 3}{2}}$.
+\item $\tfrac{dy}{dx} = \dfrac{f'\sin\theta + f\cos\theta}{f'\cos\theta - f\sin\theta}$ with $f = 1+\cos\theta$, $f' = -\sin\theta$. At $\theta = \pi/2$: $f = 1$, $f' = -1$. Numerator $= -1 \cdot 1 + 1 \cdot 0 = -1$. Denominator $= -1 \cdot 0 - 1 \cdot 1 = -1$. Slope $= \boxed{1}$.
+\end{answers}
+
+\end{document}

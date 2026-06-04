@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 2}{Infinite Series}{A}
+\begin{problems}
+\item Find the sum $\displaystyle \sum_{n=0}^\infty \!\Bigl(\tfrac{2}{3}\Bigr)^n$.
+\item Find the sum $\displaystyle \sum_{n=1}^\infty \frac{1}{n(n+1)}$ (telescope).
+\item Does $\displaystyle \sum_{n=1}^\infty \frac{1}{n^{3/2}}$ converge? Why?
+\item Does $\displaystyle \sum_{n=1}^\infty \frac{n}{2n+1}$ converge? Why?
+\item Express $0.\overline{27} = 0.272727\ldots$ as a fraction using a geometric series.
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 2}{Infinite Series}{B}
+\begin{problems}
+\item Find the sum $\displaystyle \sum_{n=1}^\infty 5 \!\Bigl(\tfrac{-1}{4}\Bigr)^{n-1}$.
+\item Find the sum $\displaystyle \sum_{n=2}^\infty \!\Bigl(\tfrac{1}{n-1} - \tfrac{1}{n+1}\Bigr)$ (telescope).
+\item Does $\displaystyle \sum_{n=1}^\infty \tfrac{1}{\sqrt n}$ converge? Why?
+\item Does $\displaystyle \sum_{n=1}^\infty \cos(n\pi)$ converge? Why?
+\item Express $0.\overline{142857}$ as a fraction.
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 2}{Infinite Series}
+
+\begin{answers}{A}
+\item Geometric, $r = 2/3$: $\tfrac{1}{1 - 2/3} = \boxed{3}$.
+\item Partial fractions: $\tfrac{1}{n(n+1)} = \tfrac{1}{n} - \tfrac{1}{n+1}$. $S_N = 1 - \tfrac{1}{N+1} \to \boxed{1}$.
+\item $p$-series with $p = 3/2 > 1$: \textbf{converges}.
+\item $a_n = \tfrac{n}{2n+1} \to 1/2 \ne 0$. By the $n$-th term test, \textbf{diverges}.
+\item $0.\overline{27} = \sum_{n=1}^\infty \tfrac{27}{100^n} = \tfrac{27/100}{1 - 1/100} = \boxed{27/99 = 3/11}$.
+\end{answers}
+
+\begin{answers}{B}
+\item Geometric with $a = 5$, $r = -1/4$: $\tfrac{5}{1 - (-1/4)} = \tfrac{5}{5/4} = \boxed{4}$.
+\item Partial: $S_N = (1 - \tfrac{1}{3}) + (\tfrac{1}{2} - \tfrac{1}{4}) + \cdots = 1 + \tfrac{1}{2} - \tfrac{1}{N} - \tfrac{1}{N+1} \to \boxed{3/2}$.
+\item $p$-series with $p = 1/2 \le 1$: \textbf{diverges}.
+\item $\cos(n\pi) = (-1)^n$, does not tend to $0$. \textbf{Diverges}.
+\item $0.\overline{142857} = \tfrac{142857}{999999} = \boxed{1/7}$.
+\end{answers}
+
+\end{document}

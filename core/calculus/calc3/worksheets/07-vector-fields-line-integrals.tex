@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 3}{Vector Fields \& Line Integrals}{A}
+\begin{problems}
+\item Compute $\divg \F$ and $\curl \F$ for $\F = \langle x^2, y^2, z^2\rangle$.
+\item Compute the line integral $\displaystyle \int_C y \dx + x \dy$ where $C$ is the line segment from $(0,0)$ to $(2,3)$.
+\item Compute $\displaystyle \int_C x \, ds$ where $C$ is parametrized by $\rr(t) = \langle t, t^2\rangle$, $t \in [0, 1]$.
+\item Show $\F = \langle 2x + y, x + 3y^2\rangle$ is conservative and find a potential.
+\item Compute the work $\displaystyle \int_C \F \dotp d\rr$ for $\F = \langle y, x\rangle$ along $\rr(t) = \langle \cos t, \sin t\rangle$, $t \in [0, \pi/2]$.
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 3}{Vector Fields \& Line Integrals}{B}
+\begin{problems}
+\item Compute $\divg \F$ and $\curl \F$ for $\F = \langle yz, xz, xy\rangle$.
+\item Compute $\displaystyle \int_C (x + y) \dx + (y - x) \dy$ where $C$ is the segment from $(0,0)$ to $(1,1)$.
+\item Show that $\F = \langle e^x \sin y, e^x \cos y\rangle$ is conservative; find a potential.
+\item Use FTLI: evaluate $\displaystyle \int_C \grad f \dotp d\rr$ where $f(x,y) = x^2 y$ and $C$ goes from $(1,1)$ to $(2,3)$.
+\item For $\F = \langle -y, x\rangle$, compute $\displaystyle \oint_C \F \dotp d\rr$ on the unit circle (counter-clockwise).
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 3}{Vector Fields \& Line Integrals}
+
+\begin{answers}{A}
+\item $\divg \F = 2x + 2y + 2z$. $\curl \F = \langle 0, 0, 0\rangle$ (since each component depends only on its own variable).
+\item Parametrize $\rr(t) = (2t, 3t)$, $t \in [0,1]$. $\dx = 2 \dt$, $\dy = 3 \dt$. $\int_0^1 [3t \cdot 2 + 2t \cdot 3] \dt = \int_0^1 12 t \dt = \boxed{6}$.
+\item $\rr'(t) = \langle 1, 2t\rangle$, $\|\rr'\| = \sqrt{1+4t^2}$. $\int_0^1 t \sqrt{1+4t^2} \dt$. Let $u = 1+4t^2$, $du = 8t \dt$. $= \tfrac{1}{8}\int_1^5 \sqrt u \du = \tfrac{1}{8} \cdot \tfrac{2}{3}(5^{3/2} - 1) = \boxed{\tfrac{5\sqrt 5 - 1}{12}}$.
+\item $P = 2x + y$, $Q = x + 3y^2$. $P_y = 1 = Q_x$. \checkmark Integrate $f_x = 2x + y \Rightarrow f = x^2 + xy + g(y)$. $f_y = x + g'(y) = x + 3y^2 \Rightarrow g(y) = y^3$. So $\boxed{f(x,y) = x^2 + xy + y^3 + C}$.
+\item $\F$ is conservative ($P_y = 1 = Q_x$). Potential $f = xy$. Endpoints: $\rr(0) = (1,0)$, $\rr(\pi/2) = (0,1)$. $\int = f(0,1) - f(1,0) = 0 - 0 = \boxed{0}$.
+\end{answers}
+
+\begin{answers}{B}
+\item $\divg \F = 0 + 0 + 0 = \boxed{0}$. $\curl \F = \langle x - x, y - y, z - z\rangle = \boxed{\vc 0}$. ($\F = \grad(xyz)$.)
+\item Parametrize $\rr = (t, t)$, $t \in [0,1]$. $\int_0^1 [(2t)(1) + (0)(1)] \dt = \int_0^1 2t \dt = \boxed{1}$.
+\item $P_y = e^x \cos y = Q_x$. \checkmark Integrate $f_x = e^x \sin y \Rightarrow f = e^x \sin y + g(y)$. $f_y = e^x \cos y + g'(y) = e^x \cos y \Rightarrow g = $ const. $\boxed{f = e^x \sin y + C}$.
+\item By FTLI: $\int = f(2,3) - f(1,1) = 12 - 1 = \boxed{11}$.
+\item Parametrize: $\rr = (\cos t, \sin t)$. $\F(\rr) = (-\sin t, \cos t)$. $\rr' = (-\sin t, \cos t)$. $\F \dotp \rr' = \sin^2 t + \cos^2 t = 1$. $\int_0^{2\pi} 1 \dt = \boxed{2\pi}$.
+\end{answers}
+
+\end{document}

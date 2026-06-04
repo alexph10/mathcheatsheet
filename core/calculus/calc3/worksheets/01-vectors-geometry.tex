@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 3}{Vectors \& Geometry of $\R^3$}{A}
+\begin{problems}
+\item For $\vc u = \langle 1, 2, -1 \rangle$ and $\vc v = \langle 3, 0, 4 \rangle$, compute $\vc u \dotp \vc v$ and the angle between them.
+\item Compute $\vc u \times \vc v$ for the same $\vc u, \vc v$ as above.
+\item Find the equation of the plane through $(1, 0, 2)$ with normal $\langle 2, -1, 3 \rangle$.
+\item Find parametric equations for the line through $(0, 1, 2)$ and $(3, 4, -1)$.
+\item Find the distance from the point $(2, 1, 3)$ to the plane $x + 2y - z = 5$.
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 3}{Vectors \& Geometry of $\R^3$}{B}
+\begin{problems}
+\item For $\vc a = \langle 2, -1, 3 \rangle$ and $\vc b = \langle 1, 4, 0 \rangle$, find $\proj_{\vc b} \vc a$.
+\item Find the area of the triangle with vertices $A = (1, 0, 0)$, $B = (0, 2, 0)$, $C = (0, 0, 3)$.
+\item Find the equation of the plane through $A, B, C$ from problem 2.
+\item Find the angle between the planes $x + y + z = 1$ and $2x - y + z = 3$.
+\item Identify the quadric surface $4x^2 + 9y^2 - z^2 = 36$.
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 3}{Vectors \& Geometry of $\R^3$}
+
+\begin{answers}{A}
+\item $\vc u \dotp \vc v = 3 + 0 - 4 = -1$. $\|\vc u\| = \sqrt 6$, $\|\vc v\| = 5$. $\cos\theta = -1/(5\sqrt 6)$, so $\theta = \arccos(-1/(5\sqrt 6)) \approx \boxed{94.7^\circ}$.
+\item $\vc u \times \vc v = \det\!\bigl(\ii(2 \cdot 4 - (-1)\cdot 0) - \jj(1 \cdot 4 - (-1)\cdot 3) + \kk(1 \cdot 0 - 2 \cdot 3)\bigr) = \boxed{\langle 8, -7, -6 \rangle}$.
+\item $\boxed{2(x - 1) - (y - 0) + 3(z - 2) = 0}$ i.e.\ $2x - y + 3z = 8$.
+\item Direction $\langle 3, 3, -3 \rangle$ (or $\langle 1,1,-1\rangle$). $\boxed{x = 3t,\ y = 1 + 3t,\ z = 2 - 3t}$.
+\item $D = \dfrac{|2 + 2 - 3 - 5|}{\sqrt{1 + 4 + 1}} = \dfrac{4}{\sqrt 6} = \boxed{\tfrac{4\sqrt 6}{6} = \tfrac{2\sqrt 6}{3}}$.
+\end{answers}
+
+\begin{answers}{B}
+\item $\proj_{\vc b} \vc a = \dfrac{\vc a \dotp \vc b}{\vc b \dotp \vc b} \vc b = \dfrac{2 - 4 + 0}{1 + 16 + 0}\langle 1,4,0 \rangle = \boxed{\langle -2/17, -8/17, 0 \rangle}$.
+\item $\vc{AB} = \langle -1, 2, 0\rangle$, $\vc{AC} = \langle -1, 0, 3 \rangle$. $\vc{AB}\times\vc{AC} = \langle 6, 3, 2 \rangle$. Area $= \tfrac{1}{2}\sqrt{36 + 9 + 4} = \boxed{\tfrac{7}{2}}$.
+\item Normal $= \langle 6, 3, 2 \rangle$, through $A=(1,0,0)$: $\boxed{6(x-1) + 3y + 2z = 0}$ i.e.\ $6x + 3y + 2z = 6$.
+\item Normals $\nn_1 = \langle 1,1,1\rangle$, $\nn_2 = \langle 2,-1,1\rangle$. $\cos\theta = \dfrac{\nn_1 \dotp \nn_2}{\|\nn_1\|\|\nn_2\|} = \dfrac{2}{\sqrt 3 \cdot \sqrt 6} = \dfrac{2}{3\sqrt 2} = \dfrac{\sqrt 2}{3}$. $\theta = \arccos(\sqrt 2/3) \approx \boxed{61.9^\circ}$.
+\item Divide by $36$: $\tfrac{x^2}{9} + \tfrac{y^2}{4} - \tfrac{z^2}{36} = 1$. \textbf{Hyperboloid of one sheet} (axis along $z$).
+\end{answers}
+
+\end{document}

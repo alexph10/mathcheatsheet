@@ -1,0 +1,34 @@
+\usepackage[a4paper,margin=0.9in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{parskip}
+
+\hypersetup{colorlinks=true, linkcolor=black!70, urlcolor=blue!60!black}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\dx}{\,dx}
+\newcommand{\dt}{\,dt}
+\newcommand{\du}{\,du}
+\newcommand{\dy}{\,dy}
+\newcommand{\dth}{\,d\theta}
+
+\titleformat{\section}{\Large\bfseries\color{blue!40!black}}{}{0em}{}
+
+\newcommand{\wsheader}[3]{%
+  \begin{center}\large\textbf{#1 \;--\; #2}\\[2pt]\normalsize\textit{Worksheet #3}\end{center}\medskip
+}
+\newcommand{\anshdr}[2]{%
+  \begin{center}\large\textbf{#1 \;--\; #2}\\[2pt]\normalsize\textit{Answer Key (Worksheets A \& B)}\end{center}\medskip
+}
+\newenvironment{problems}{\begin{enumerate}[leftmargin=*,label=\textbf{\arabic*.}]}{\end{enumerate}}
+\newenvironment{answers}[1]{%
+  \medskip\noindent\textbf{Worksheet #1.}
+  \begin{enumerate}[leftmargin=*,label=\textbf{\arabic*.}]
+}{\end{enumerate}}

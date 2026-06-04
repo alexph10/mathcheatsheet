@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 1}{Differentiation Rules}{A}
+\begin{problems}
+\item Differentiate $f(x) = (3x^2 + 1)(x^3 - 2x)$ (product rule).
+\item Differentiate $g(x) = \dfrac{\sin x}{1 + \cos x}$.
+\item Differentiate $h(x) = \cos(x^3 + e^x)$.
+\item Use implicit differentiation to find $dy/dx$ for $x^2 + xy + y^2 = 7$.
+\item Use logarithmic differentiation to find $y'$ for $y = x^{\sin x}\ (x > 0)$.
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 1}{Differentiation Rules}{B}
+\begin{problems}
+\item Differentiate $f(x) = x^2 e^x \ln x$ (extended product rule).
+\item Differentiate $g(x) = \dfrac{\sqrt{x^2 + 1}}{x}$.
+\item Differentiate $h(x) = \tan\!\bigl(\sqrt{1 + x^2}\bigr)$.
+\item Use implicit differentiation to find the slope of the tangent to $\sin(xy) = y$ at $(0, 0)$.
+\item Use logarithmic differentiation to find $y'$ for $y = (\ln x)^x$ (where defined).
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 1}{Differentiation Rules}
+
+\begin{answers}{A}
+\item $f' = 6x(x^3-2x) + (3x^2+1)(3x^2-2) = 6x^4 - 12x^2 + 9x^4 - 6x^2 + 3x^2 - 2 = \boxed{15x^4 - 15x^2 - 2}$.
+\item $g' = \tfrac{\cos x(1+\cos x) - \sin x(-\sin x)}{(1+\cos x)^2} = \tfrac{\cos x + \cos^2 x + \sin^2 x}{(1+\cos x)^2} = \tfrac{1 + \cos x}{(1+\cos x)^2} = \boxed{\tfrac{1}{1+\cos x}}$.
+\item Chain rule: $h' = -\sin(x^3 + e^x) \cdot (3x^2 + e^x) = \boxed{-(3x^2 + e^x)\sin(x^3 + e^x)}$.
+\item Differentiate: $2x + y + x y' + 2y y' = 0 \Rightarrow y'(x + 2y) = -(2x + y) \Rightarrow \boxed{y' = -\tfrac{2x+y}{x+2y}}$.
+\item $\ln y = \sin x \ln x \Rightarrow y'/y = \cos x \ln x + \tfrac{\sin x}{x} \Rightarrow \boxed{y' = x^{\sin x}\!\Bigl(\cos x \ln x + \tfrac{\sin x}{x}\Bigr)}$.
+\end{answers}
+
+\begin{answers}{B}
+\item $f' = 2x \cdot e^x \ln x + x^2 e^x \ln x + x^2 e^x \cdot \tfrac{1}{x} = \boxed{x e^x(2 \ln x + x \ln x + 1)}$.
+\item Rewrite $g = (x^2+1)^{1/2} \cdot x^{-1}$. Quotient or chain:
+  $g' = \tfrac{x \cdot \tfrac{x}{\sqrt{x^2+1}} - \sqrt{x^2+1}}{x^2} = \tfrac{x^2 - (x^2+1)}{x^2 \sqrt{x^2+1}} = \boxed{-\tfrac{1}{x^2 \sqrt{x^2+1}}}$.
+\item $h' = \sec^2\!\bigl(\sqrt{1+x^2}\bigr) \cdot \tfrac{x}{\sqrt{1+x^2}} = \boxed{\tfrac{x}{\sqrt{1+x^2}} \sec^2\!\bigl(\sqrt{1+x^2}\bigr)}$.
+\item Differentiate: $\cos(xy)\,(y + x y') = y'$. At $(0,0)$: $1\cdot(0 + 0) = y'$, so $\boxed{y'(0) = 0}$.
+\item $\ln y = x \ln(\ln x) \Rightarrow y'/y = \ln(\ln x) + x \cdot \tfrac{1}{\ln x} \cdot \tfrac{1}{x} = \ln(\ln x) + \tfrac{1}{\ln x}$. Thus $\boxed{y' = (\ln x)^x \!\Bigl(\ln(\ln x) + \tfrac{1}{\ln x}\Bigr)}$.
+\end{answers}
+
+\end{document}

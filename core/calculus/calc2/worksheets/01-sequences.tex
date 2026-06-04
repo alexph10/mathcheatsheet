@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 2}{Sequences}{A}
+\begin{problems}
+\item Determine $\displaystyle \lim_{n \to \infty} \frac{2n^2 + 3n}{n^2 + 1}$.
+\item Determine whether $\{a_n\}$ with $a_n = (-1)^n$ converges.
+\item Use the squeeze theorem to find $\displaystyle \lim_{n \to \infty} \frac{\cos n}{n}$.
+\item Find $\displaystyle \lim_{n \to \infty} \sqrt[n]{n}$ (use $\ln$).
+\item Show that $a_n = \tfrac{n}{n+1}$ is increasing and bounded above, then find its limit.
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 2}{Sequences}{B}
+\begin{problems}
+\item Determine $\displaystyle \lim_{n \to \infty} \frac{3^n}{n!}$.
+\item Determine whether $\{a_n\}$ with $a_n = \sin(n\pi/2)$ converges.
+\item Use the squeeze theorem to find $\displaystyle \lim_{n \to \infty} \frac{n!}{n^n}$.
+\item Find $\displaystyle \lim_{n \to \infty} \!\Bigl(1 + \tfrac{3}{n}\Bigr)^n$.
+\item Show $a_n = \sqrt{2 + a_{n-1}}$, $a_1 = \sqrt 2$, is bounded above by $2$ and increasing, then find $\lim a_n$.
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 2}{Sequences}
+
+\begin{answers}{A}
+\item Divide by $n^2$: $\tfrac{2 + 3/n}{1 + 1/n^2} \to \boxed{2}$.
+\item $a_n$ alternates $-1, 1, -1, \ldots$, so it does not approach a single value. \textbf{Diverges.}
+\item $-1/n \le \cos n / n \le 1/n$, both bounds $\to 0$, so limit $= \boxed{0}$.
+\item $\ln(\sqrt[n]{n}) = \tfrac{\ln n}{n} \to 0$, so $\sqrt[n]{n} \to e^0 = \boxed{1}$.
+\item $a_{n+1} - a_n = \tfrac{n+1}{n+2} - \tfrac{n}{n+1} = \tfrac{1}{(n+1)(n+2)} > 0$, increasing. Bounded above by $1$. Limit $= \boxed{1}$.
+\end{answers}
+
+\begin{answers}{B}
+\item Ratio: $\tfrac{a_{n+1}}{a_n} = \tfrac{3}{n+1} \to 0 < 1$, so $a_n \to \boxed{0}$ (standard fact: factorials beat exponentials).
+\item Values cycle $1, 0, -1, 0, 1, \ldots$. \textbf{Diverges.}
+\item $0 < \tfrac{n!}{n^n} = \tfrac{1}{n} \cdot \tfrac{2}{n} \cdots \tfrac{n}{n} \le \tfrac{1}{n} \cdot 1 \cdots 1 = \tfrac{1}{n} \to 0$. So limit $= \boxed{0}$.
+\item Standard limit: $\boxed{e^3}$.
+\item Suppose $a_n < 2$. Then $a_{n+1} = \sqrt{2 + a_n} < \sqrt 4 = 2$. By induction, bounded by $2$. Also $a_{n+1}^2 - a_n = 2 + a_n - a_n^2 = -(a_n - 2)(a_n + 1) > 0$ for $a_n < 2$, so increasing. Limit $L$ satisfies $L = \sqrt{2 + L} \Rightarrow L^2 - L - 2 = 0 \Rightarrow \boxed{L = 2}$.
+\end{answers}
+
+\end{document}

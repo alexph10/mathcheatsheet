@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 3}{Green, Stokes, Divergence}{A}
+\begin{problems}
+\item Use Green's theorem to compute $\displaystyle \oint_C (x^2 \dy - y^2 \dx)$ where $C$ is the unit circle (counter-clockwise).
+\item Use Green's theorem to compute the area of the ellipse $\tfrac{x^2}{a^2} + \tfrac{y^2}{b^2} = 1$ using $A = \tfrac{1}{2}\oint x \dy - y \dx$.
+\item Use Stokes' theorem to evaluate $\displaystyle \oint_C \F \dotp d\rr$ for $\F = \langle -y, x, z\rangle$ where $C$ is the boundary of the disk $x^2 + y^2 \le 1$, $z = 0$, oriented counter-clockwise.
+\item Use the divergence theorem to find the outward flux of $\F = \langle x, y, z\rangle$ through the unit cube $[0,1]^3$.
+\item Use the divergence theorem to find the outward flux of $\F = \langle x^3, y^3, z^3\rangle$ through the unit sphere.
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 3}{Green, Stokes, Divergence}{B}
+\begin{problems}
+\item Use Green's theorem to compute $\displaystyle \oint_C y^3 \dx - x^3 \dy$ where $C$ is the unit circle (CCW).
+\item Use Green's theorem to evaluate $\displaystyle \oint_C (e^x + y^2) \dx + (e^y + x^2) \dy$ on the boundary of the rectangle $[0,1]\times[0,2]$ (CCW).
+\item Use Stokes' theorem to compute $\displaystyle \iint_S (\curl \F)\dotp d\vc S$ where $\F = \langle yz, xz, xy\rangle$ and $S$ is the upper half-sphere $x^2 + y^2 + z^2 = 1$, $z \ge 0$, oriented upward.
+\item Use the divergence theorem to compute the outward flux of $\F = \langle x^2, y^2, z^2\rangle$ through the surface of the box $[0, 1] \times [0, 2] \times [0, 3]$.
+\item Verify the divergence theorem for $\F = \langle x, 0, 0\rangle$ on the unit ball (compute both sides).
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 3}{Green, Stokes, Divergence}
+
+\begin{answers}{A}
+\item Green: $\oint (-y^2 \dx + x^2 \dy) = \iint_D (Q_x - P_y) \dA = \iint_D (2x - (-2y)) \dA = \iint_D 2(x+y) \dA = 0$ (by symmetry). $\boxed{0}$.
+\item $A = \tfrac{1}{2}\!\int_0^{2\pi}(a\cos t \cdot b\cos t - b\sin t \cdot (-a\sin t)) \dt = \tfrac{ab}{2}\!\int_0^{2\pi} 1 \dt = \boxed{\pi a b}$.
+\item $\curl \F = \langle 0, 0, 2\rangle$. Surface $S$ is the disk in the $xy$-plane, normal $\kk$. Integral $= \iint_S 2 \dA = 2 \cdot \pi = \boxed{2\pi}$.
+\item $\divg \F = 3$. Flux $= 3 \cdot \text{Vol}([0,1]^3) = \boxed{3}$.
+\item $\divg \F = 3(x^2 + y^2 + z^2) = 3\rho^2$. Flux $= \int_0^{2\pi}\!\int_0^\pi\!\int_0^1 3\rho^2 \cdot \rho^2 \sin\varphi \drho \dphi \dth = 3 \cdot 2\pi \cdot 2 \cdot \tfrac{1}{5} = \boxed{\tfrac{12\pi}{5}}$.
+\end{answers}
+
+\begin{answers}{B}
+\item $P = y^3$, $Q = -x^3$. $Q_x - P_y = -3x^2 - 3y^2$. $\oint = -3\iint_D (x^2 + y^2) \dA = -3 \int_0^{2\pi}\!\int_0^1 r^2 \cdot r \dr \dth = -3 \cdot 2\pi \cdot \tfrac{1}{4} = \boxed{-\tfrac{3\pi}{2}}$.
+\item $Q_x - P_y = 2x - 2y$. $\oint = \int_0^1\!\int_0^2 (2x - 2y) \dy \dx = \int_0^1 (4x - 4) \dx = 2 - 4 = \boxed{-2}$.
+\item $\F = \grad(xyz)$ is conservative, so $\curl \F = \vc 0$. Integral $= \boxed{0}$.
+\item $\divg \F = 2(x + y + z)$. Flux $= 2 \int_0^1\!\int_0^2\!\int_0^3 (x+y+z) \dz \dy \dx$. Inner: $3x + 3y + 9/2$. Next: $\int_0^2 (3x + 3y + 9/2) \dy = 6x + 6 + 9 = 6x + 15$. Outer: $\int_0^1 (6x + 15) \dx = 3 + 15 = 18$. Flux $= 2 \cdot 18 = \boxed{36}$.
+\item LHS (volume): $\divg \F = 1$, $\iiint_B 1 \dV = \tfrac{4\pi}{3}$. RHS (surface): use spherical, $\F\dotp\nn = x \cdot x = \sin^2\varphi\cos^2\theta$ on $\rho = 1$. $\iint_S x^2 \dS = \int_0^{2\pi}\cos^2\theta \dth\int_0^\pi \sin^3\varphi \dphi = \pi \cdot \tfrac{4}{3} = \tfrac{4\pi}{3}$. \textbf{Both $= 4\pi/3$.} \checkmark
+\end{answers}
+
+\end{document}

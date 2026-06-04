@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 1}{Continuity}{A}
+\begin{problems}
+\item Classify the discontinuity of $f(x) = \dfrac{x^2 - 1}{x - 1}$ at $x = 1$.
+\item Find the value of $c$ that makes
+  $f(x) = \begin{cases} x^2 + 1, & x \le 2 \\ cx + 3, & x > 2 \end{cases}$ continuous on $\R$.
+\item State where $f(x) = \dfrac{1}{x^2 - 4}$ is continuous; classify each discontinuity.
+\item Use IVT to show $x^3 + x - 1 = 0$ has a root in $(0,1)$.
+\item Does $f(x) = \lfloor x \rfloor$ satisfy the conclusion of the EVT on $[0,2]$? Explain.
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 1}{Continuity}{B}
+\begin{problems}
+\item Classify the discontinuity of $f(x) = \dfrac{|x|}{x}$ at $x = 0$.
+\item Find $a, b$ such that
+  $f(x) = \begin{cases} ax + 1, & x < 1 \\ 4, & x = 1 \\ x^2 + b, & x > 1 \end{cases}$ is continuous at $x = 1$.
+\item Determine all points of discontinuity of $f(x) = \tan x$ on $[-2\pi, 2\pi]$.
+\item Show $\cos x = x$ has a solution in $(0, 1)$.
+\item Give an example of a function on $(0,1)$ that is continuous but has no maximum. Why doesn't this contradict EVT?
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 1}{Continuity}
+
+\begin{answers}{A}
+\item $f(x) = x+1$ for $x \ne 1$; $f(1)$ undefined, $\lim = 2$. \textbf{Removable.}
+\item Continuity at $2$: $2^2 + 1 = 2c + 3 \Rightarrow 5 = 2c + 3 \Rightarrow \boxed{c = 1}$.
+\item Continuous on $\R\setminus\{\pm 2\}$. At $x = \pm 2$ the denominator $\to 0$ with $f \to \pm\infty$, so \textbf{infinite discontinuities} (vertical asymptotes).
+\item $f(x)=x^3+x-1$ is a polynomial (continuous). $f(0)=-1<0$, $f(1)=1>0$. By IVT $\exists c\in(0,1)$ with $f(c)=0$.
+\item $\lfloor x \rfloor$ is \emph{not} continuous on $[0,2]$ (jumps at $1$ and $2$), so EVT does not apply. Nonetheless, it does attain a max ($2$) and a min ($0$) on $[0,2]$ --- EVT is sufficient, not necessary.
+\end{answers}
+
+\begin{answers}{B}
+\item Left limit $=-1$, right limit $=+1$. \textbf{Jump discontinuity.}
+\item Need $a + 1 = 4$ and $1 + b = 4$. So $\boxed{a = 3,\ b = 3}$.
+\item $\tan x$ undefined at $x = \pi/2 + k\pi$. On $[-2\pi, 2\pi]$: $x = \pm \pi/2, \pm 3\pi/2$ --- four \textbf{infinite discontinuities}.
+\item Let $g(x) = \cos x - x$. Then $g(0) = 1 > 0$ and $g(1) = \cos 1 - 1 < 0$. $g$ is continuous, so by IVT $\exists c \in (0,1)$ with $g(c)=0$.
+\item $f(x) = x$ on $(0,1)$ is continuous, bounded above by $1$, but never attains $1$. No contradiction: EVT requires a \emph{closed} bounded interval; $(0,1)$ is open.
+\end{answers}
+
+\end{document}

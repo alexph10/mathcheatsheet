@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 2}{Convergence Tests}{A}
+\begin{problems}
+\item Use the integral test to determine whether $\displaystyle \sum_{n=2}^\infty \frac{1}{n \ln n}$ converges.
+\item Use the ratio test on $\displaystyle \sum_{n=1}^\infty \frac{n!}{2^n}$.
+\item Use the root test on $\displaystyle \sum_{n=1}^\infty \!\Bigl(\tfrac{n}{2n+1}\Bigr)^n$.
+\item Use limit comparison on $\displaystyle \sum_{n=1}^\infty \frac{1}{n^2 + n}$.
+\item Determine convergence of $\displaystyle \sum_{n=1}^\infty (-1)^n \frac{1}{n}$; is it absolute or conditional?
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 2}{Convergence Tests}{B}
+\begin{problems}
+\item Use the integral test on $\displaystyle \sum_{n=1}^\infty \frac{n}{e^n}$.
+\item Use the ratio test on $\displaystyle \sum_{n=1}^\infty \frac{2^n}{n!}$.
+\item Use the root test on $\displaystyle \sum_{n=1}^\infty \!\Bigl(\tfrac{2n + 1}{3n}\Bigr)^n$.
+\item Use direct comparison: $\displaystyle \sum_{n=1}^\infty \frac{\sin^2 n}{n^2}$.
+\item Determine convergence of $\displaystyle \sum_{n=1}^\infty (-1)^n \frac{n}{n^2+1}$; is it absolute or conditional?
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 2}{Convergence Tests}
+
+\begin{answers}{A}
+\item $f(x) = 1/(x \ln x)$, with $u = \ln x$: $\int \tfrac{dx}{x \ln x} = \ln(\ln x)$, which $\to \infty$. \textbf{Diverges.}
+\item $\tfrac{a_{n+1}}{a_n} = \tfrac{(n+1)!/(2^{n+1})}{n!/2^n} = \tfrac{n+1}{2} \to \infty > 1$. \textbf{Diverges.}
+\item $\sqrt[n]{a_n} = \tfrac{n}{2n+1} \to 1/2 < 1$. \textbf{Converges.}
+\item Compare with $b_n = 1/n^2$: $a_n/b_n = \tfrac{n^2}{n^2 + n} \to 1$. Since $\sum 1/n^2$ converges, so does $\sum a_n$.
+\item Alternating, $b_n = 1/n \downarrow 0$: converges by Leibniz. But $\sum 1/n$ diverges. \textbf{Conditionally convergent.}
+\end{answers}
+
+\begin{answers}{B}
+\item $\int_1^\infty x e^{-x} \dx = [-xe^{-x} - e^{-x}]_1^\infty = 2/e$. Finite, so the series \textbf{converges}.
+\item $\tfrac{a_{n+1}}{a_n} = \tfrac{2}{n+1} \to 0 < 1$. \textbf{Converges.}
+\item $\sqrt[n]{a_n} = \tfrac{2n+1}{3n} \to 2/3 < 1$. \textbf{Converges.}
+\item $0 \le \tfrac{\sin^2 n}{n^2} \le \tfrac{1}{n^2}$, and $\sum 1/n^2$ converges. \textbf{Converges} by direct comparison.
+\item Alternating; $b_n = \tfrac{n}{n^2+1}$ is decreasing for $n \ge 1$ and $\to 0$. So converges by Leibniz. $\sum \tfrac{n}{n^2+1}$ behaves like $\sum 1/n$ (limit comparison): diverges. \textbf{Conditionally convergent.}
+\end{answers}
+
+\end{document}

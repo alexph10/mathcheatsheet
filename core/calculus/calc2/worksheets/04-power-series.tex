@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 2}{Power Series}{A}
+\begin{problems}
+\item Find the radius and interval of convergence of $\displaystyle \sum_{n=0}^\infty \frac{x^n}{n!}$.
+\item Find the radius and interval of convergence of $\displaystyle \sum_{n=1}^\infty \frac{x^n}{n}$.
+\item Find the radius and interval of convergence of $\displaystyle \sum_{n=0}^\infty n! \, x^n$.
+\item Differentiate the series $\sum x^n$ ($|x|<1$) to give a closed form for $\sum_{n=1}^\infty n x^{n-1}$.
+\item Integrate $\tfrac{1}{1-x} = \sum x^n$ to obtain a power series for $-\ln(1-x)$ and state its radius.
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 2}{Power Series}{B}
+\begin{problems}
+\item Find the radius and interval of convergence of $\displaystyle \sum_{n=1}^\infty \frac{(x-2)^n}{n \cdot 3^n}$.
+\item Find the radius and interval of convergence of $\displaystyle \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}$.
+\item Find the radius of convergence of $\displaystyle \sum_{n=1}^\infty \frac{x^n}{n^n}$.
+\item Use $\frac{1}{1-x}=\sum x^n$ to write $\dfrac{1}{1+x^2}$ as a power series and give its radius.
+\item Substitute into the series for $e^x$ to get a Maclaurin series for $e^{2x}$.
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 2}{Power Series}
+
+\begin{answers}{A}
+\item Ratio: $\tfrac{|x|^{n+1}/(n+1)!}{|x|^n/n!} = \tfrac{|x|}{n+1} \to 0$ for all $x$. $R = \infty$, interval $\boxed{(-\infty, \infty)}$.
+\item Ratio: $|x| \cdot \tfrac{n}{n+1} \to |x|$. $R = 1$. Endpoints: $x = 1$: $\sum 1/n$ diverges; $x = -1$: alternating harmonic converges. Interval $\boxed{[-1, 1)}$.
+\item Ratio: $\tfrac{(n+1)! \cdot |x|}{n!} = (n+1)|x| \to \infty$ unless $x = 0$. $R = 0$, interval $\boxed{\{0\}}$.
+\item $\dfrac{d}{dx} \sum_{n=0}^\infty x^n = \sum_{n=1}^\infty n x^{n-1}$ and $\dfrac{d}{dx} \tfrac{1}{1-x} = \tfrac{1}{(1-x)^2}$. So $\boxed{\sum_{n=1}^\infty n x^{n-1} = \tfrac{1}{(1-x)^2}}$, $|x|<1$.
+\item $\int \sum x^n \dx = \sum \tfrac{x^{n+1}}{n+1}$. So $-\ln(1-x) = \displaystyle \sum_{n=1}^\infty \tfrac{x^n}{n}$, $R = 1$ (interval $[-1, 1)$).
+\end{answers}
+
+\begin{answers}{B}
+\item Ratio: $\tfrac{|x-2|}{3} \cdot \tfrac{n}{n+1} \to \tfrac{|x-2|}{3}$. $R = 3$. Endpoints $x = 5$: $\sum 1/n$ diverges; $x = -1$: alternating harmonic converges. Interval $\boxed{[-1, 5)}$.
+\item Ratio: $\tfrac{x^2}{(2n+1)(2n+2)} \to 0$ for all $x$. $R = \infty$, interval $\boxed{\R}$. (Series equals $\cos x$.)
+\item Root test: $\sqrt[n]{|x|^n / n^n} = |x|/n \to 0$ for all $x$. $\boxed{R = \infty}$.
+\item Substitute $x \to -x^2$: $\dfrac{1}{1 + x^2} = \displaystyle \sum_{n=0}^\infty (-1)^n x^{2n}$. Radius $\boxed{R = 1}$.
+\item $e^{2x} = \displaystyle \sum_{n=0}^\infty \frac{(2x)^n}{n!} = \sum_{n=0}^\infty \frac{2^n x^n}{n!}$, all $x$.
+\end{answers}
+
+\end{document}

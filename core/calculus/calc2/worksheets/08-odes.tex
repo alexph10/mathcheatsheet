@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\input{worksheets-preamble}
+\begin{document}
+
+\wsheader{Calc 2}{First-Order ODEs}{A}
+\begin{problems}
+\item Solve $y' = -2y$, $y(0) = 5$.
+\item Solve the separable ODE $y' = x e^{-y}$.
+\item Solve the linear ODE $y' + 2y = 4$.
+\item Find the equilibria of $y' = y(1 - y)$ and classify their stability.
+\item Apply one step of Euler's method with $h = 0.1$ to $y' = x + y$, $y(0) = 1$.
+\end{problems}
+
+\vfill
+\newpage
+\wsheader{Calc 2}{First-Order ODEs}{B}
+\begin{problems}
+\item Solve $y' = \dfrac{x}{y}$, $y(0) = 2$.
+\item Solve the linear ODE $y' + \dfrac{1}{x} y = x$, $y(1) = 0$ ($x > 0$).
+\item Check that $2xy \dx + (x^2 + y^2) \dy = 0$ is exact and solve it.
+\item A tank holds $100$ L of pure water. Brine with $0.5$ kg/L of salt enters at $5$ L/min while the well-mixed solution leaves at $5$ L/min. Find the salt content $S(t)$.
+\item Solve the logistic equation $y' = y(1 - y/4)$, $y(0) = 1$.
+\end{problems}
+
+\vfill
+\newpage
+\anshdr{Calc 2}{First-Order ODEs}
+
+\begin{answers}{A}
+\item $y = C e^{-2x}$; $y(0) = 5 \Rightarrow \boxed{y = 5 e^{-2x}}$.
+\item $e^y \dy = x \dx \Rightarrow e^y = \tfrac{x^2}{2} + C \Rightarrow \boxed{y = \ln\!\bigl(\tfrac{x^2}{2} + C\bigr)}$.
+\item $\mu = e^{2x}$, $(e^{2x} y)' = 4 e^{2x} \Rightarrow e^{2x} y = 2 e^{2x} + C \Rightarrow \boxed{y = 2 + C e^{-2x}}$.
+\item Equilibria $y = 0$ and $y = 1$. $f(y) = y - y^2$, $f'(y) = 1 - 2y$. $f'(0) = 1 > 0$ (\textbf{unstable}); $f'(1) = -1 < 0$ (\textbf{stable}).
+\item $y_1 = y_0 + h(x_0 + y_0) = 1 + 0.1(0 + 1) = \boxed{1.1}$.
+\end{answers}
+
+\begin{answers}{B}
+\item Separate: $y \dy = x \dx \Rightarrow \tfrac{y^2}{2} = \tfrac{x^2}{2} + C \Rightarrow y^2 = x^2 + C'$. $y(0)=2 \Rightarrow C'=4$. $\boxed{y = \sqrt{x^2 + 4}}$.
+\item $\mu = e^{\int \tfrac{1}{x} \dx} = x$. $(xy)' = x^2 \Rightarrow xy = \tfrac{x^3}{3} + C \Rightarrow y = \tfrac{x^2}{3} + \tfrac{C}{x}$. $y(1) = 0 \Rightarrow C = -1/3$. $\boxed{y = \tfrac{x^2}{3} - \tfrac{1}{3x}}$.
+\item $M = 2xy$, $N = x^2 + y^2$. $M_y = 2x = N_x$, exact. Integrate $F_x = 2xy \Rightarrow F = x^2 y + g(y)$. Then $F_y = x^2 + g'(y) = x^2 + y^2 \Rightarrow g(y) = y^3/3$. Solution: $\boxed{x^2 y + \tfrac{y^3}{3} = C}$.
+\item $S' = \tfrac{1}{2} \cdot 5 - \tfrac{S}{100} \cdot 5 = 2.5 - 0.05 S$. Linear: $\mu = e^{0.05 t}$, $S = 50 + C e^{-0.05 t}$. $S(0) = 0 \Rightarrow C = -50$. $\boxed{S(t) = 50(1 - e^{-0.05 t})}$ kg.
+\item Standard logistic with $M=4$, $k=1$: $y = \tfrac{4}{1 + A e^{-t}}$. $y(0) = 1 \Rightarrow 1 = \tfrac{4}{1+A} \Rightarrow A = 3$. $\boxed{y = \tfrac{4}{1 + 3 e^{-t}}}$.
+\end{answers}
+
+\end{document}
